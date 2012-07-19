@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    
+    <description>My Taglib by JavaWorld.com.tw</description>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>Mytaglib</short-name>
+    <uri></uri>
+    <small-icon></small-icon>
+    
+    
+    <tag>
+      <description>Simplest example:Hello</description>
+      <name>Hello</name>
+      <tag-class>tw.com.javaworld.CH15.Hello</tag-class>
+      <body-content>empty</body-content>
+    </tag>
+    
+    <tag>
+      <description>Hello TEI</description>
+      <name>Hello_TEI</name>
+      <tag-class>tw.com.javaworld.CH15.Hello_TEI</tag-class>
+      <tei-class>tw.com.javaworld.CH15.TEI</tei-class>
+      <body-content>empty</body-content>
+    
+    <!--
+      <variable>
+        <name-given>Message</name-given>
+        <variable-class>String</variable-class>
+        <declare>true</declare>
+        <scope>AT_END</scope>
+      </variable>
+    -->
+    </tag>
+    
+    <tag>
+      <description>Example:myfont</description>
+      <name>myfont</name>
+      <tag-class>tw.com.javaworld.CH15.Myfont</tag-class>
+      <body-content>JSP</body-content>
+    
+      <attribute>
+        <name>bgColor</name>
+        <required>false</required>
+      </attribute>
+      <attribute>
+        <name>color</name>
+        <required>true</required>
+      </attribute>
+      <attribute>
+        <name>bordercolor</name>
+        <required>false</required>
+      </attribute>
+      <attribute>
+        <name>align</name>
+        <required>false</required>
+      </attribute>
+      <attribute>
+        <name>fontSize</name>
+        <required>false</required>
+      </attribute>
+      <attribute>
+        <name>border</name>
+        <required>false</required>
+      </attribute>
+      <attribute>
+        <name>width</name>
+        <required>false</required>
+      </attribute>
+    </tag>    
+    
+    <tag>
+      <description>Example:filter</description>
+      <name>filter</name>
+      <tag-class>tw.com.javaworld.CH15.Filter</tag-class>
+      <body-content>JSP</body-content>
+    </tag>
+    
+    <tag>
+      <description>Hello Simple Tag</description>
+      <name>HelloSimpleTag</name>
+      <tag-class>tw.com.javaworld.CH16.HelloSimpleTag</tag-class>
+      <body-content>empty</body-content>
+    </tag>
+
+    <tag>
+      <description>Add Simple Tag</description>
+      <name>Add</name>
+      <tag-class>tw.com.javaworld.CH16.AddSimpleTag</tag-class>
+      <body-content>empty</body-content>
+      
+      <attribute>
+        <name>num1</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+      </attribute>
+
+      <attribute>
+        <name>num2</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+      </attribute>
+            
+    </tag>
+
+    <tag>
+      <description>Repeate Simple Tag</description>
+      <name>Repeat</name>
+      <tag-class>tw.com.javaworld.CH16.RepeatSimpleTag</tag-class>
+      <body-content>empty</body-content>
+      
+      <attribute>
+        <name>count</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+      </attribute>
+
+      <attribute>
+        <name>fragment</name>
+        <required>true</required>
+        <fragment>true</fragment>
+      </attribute> 
+    </tag>    
+    
+    <tag>
+      <description>DynamicAttribute</description>
+      <name>DynAdd</name>
+      <tag-class>tw.com.javaworld.CH16.DynamicAdd</tag-class>
+      <body-content>empty</body-content>
+
+      <dynamic-attributes>true</dynamic-attributes>
+    </tag>    
+    
+</taglib>

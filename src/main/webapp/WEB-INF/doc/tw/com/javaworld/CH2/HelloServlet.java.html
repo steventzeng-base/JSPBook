@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.3">
+<TITLE>tw.com.javaworld.CH2.HelloServlet (Java2HTML)</TITLE>
+</HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">HelloServlet.java</font>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<FONT ID="LN">1 </FONT><A NAME="1"></A><FONT ID="Package">package</FONT> <A HREF="../../../../tw.com.javaworld.CH2.index.html" target="packageFrame">tw.com.javaworld.CH2</A>;
+<FONT ID="LN">2 </FONT><A NAME="2"></A>
+<FONT ID="LN">3 </FONT><A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/package-summary.html">javax.servlet.*</A>;
+<FONT ID="LN">4 </FONT><A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/http/package-summary.html">javax.servlet.http.*</A>;
+<FONT ID="LN">5 </FONT><A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/io/package-summary.html">java.io.*</A>;
+<FONT ID="LN">6 </FONT><A NAME="6"></A>
+<FONT ID="LN">7 </FONT><A NAME="7"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> HelloServlet <FONT ID="Extends">extends</FONT> <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/http/HttpServlet.html">HttpServlet</A> {
+<FONT ID="LN">8 </FONT><A NAME="8"></A>    
+<FONT ID="LN">9 </FONT><A NAME="9"></A>    <FONT ID="SingleLineComment">//Initialize global variables  
+<FONT ID="LN">10</FONT><A NAME="10"></A></FONT>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> init(<A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/ServletConfig.html">ServletConfig</A> config) <FONT ID="Throws">throws</FONT> <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/ServletException.html">ServletException</A> {
+<FONT ID="LN">11</FONT><A NAME="11"></A>        <FONT ID="Super">super</FONT>.init(config);
+<FONT ID="LN">12</FONT><A NAME="12"></A>    }
+<FONT ID="LN">13</FONT><A NAME="13"></A>    
+<FONT ID="LN">14</FONT><A NAME="14"></A>    <FONT ID="SingleLineComment">//Process the HTTP Get request  
+<FONT ID="LN">15</FONT><A NAME="15"></A></FONT>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> doGet(<A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/http/HttpServletRequest.html">HttpServletRequest</A> request, <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/http/HttpServletResponse.html">HttpServletResponse</A> response)
+<FONT ID="LN">16</FONT><A NAME="16"></A>        <FONT ID="Throws">throws</FONT> <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/ServletException.html">ServletException</A>, <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/io/IOException.html">IOException</A> {
+<FONT ID="LN">17</FONT><A NAME="17"></A>        response.setContentType(<FONT ID="StringLiteral">"text/html"</FONT>);
+<FONT ID="LN">18</FONT><A NAME="18"></A>        <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/io/PrintWriter.html">PrintWriter</A> out = response.getWriter();
+<FONT ID="LN">19</FONT><A NAME="19"></A>        
+<FONT ID="LN">20</FONT><A NAME="20"></A>        out.println(<FONT ID="StringLiteral">"&lt;html&gt;"</FONT>);
+<FONT ID="LN">21</FONT><A NAME="21"></A>        out.println(<FONT ID="StringLiteral">"&lt;head&gt;&lt;title&gt;CH2 - HelloServlet&lt;/title&gt;&lt;/head&gt;"</FONT>);
+<FONT ID="LN">22</FONT><A NAME="22"></A>        out.println(<FONT ID="StringLiteral">"&lt;body&gt;"</FONT>);
+<FONT ID="LN">23</FONT><A NAME="23"></A>        out.println(<FONT ID="StringLiteral">" Hello World &lt;br&gt;"</FONT>);
+<FONT ID="LN">24</FONT><A NAME="24"></A>        out.println(<FONT ID="StringLiteral">"¤j®a¦n"</FONT>);
+<FONT ID="LN">25</FONT><A NAME="25"></A>        out.println(<FONT ID="StringLiteral">"&lt;/body&gt;"</FONT>);
+<FONT ID="LN">26</FONT><A NAME="26"></A>        out.println(<FONT ID="StringLiteral">"&lt;/html&gt;"</FONT>);
+<FONT ID="LN">27</FONT><A NAME="27"></A>
+<FONT ID="LN">28</FONT><A NAME="28"></A>        out.close();
+<FONT ID="LN">29</FONT><A NAME="29"></A>    } 
+<FONT ID="LN">30</FONT><A NAME="30"></A>    
+<FONT ID="LN">31</FONT><A NAME="31"></A>    <FONT ID="SingleLineComment">//Get Servlet information 
+<FONT ID="LN">32</FONT><A NAME="32"></A></FONT>    <FONT ID="Public">public</FONT> <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> getServletInfo() {
+<FONT ID="LN">33</FONT><A NAME="33"></A>        <FONT ID="Return">return</FONT> <FONT ID="StringLiteral">"tw.com.javaworld.CH2.HelloSerlvet Information"</FONT>;
+<FONT ID="LN">34</FONT><A NAME="34"></A>    }
+<FONT ID="LN">35</FONT><A NAME="35"></A>}</pre>
+</BODY>
+</HTML>

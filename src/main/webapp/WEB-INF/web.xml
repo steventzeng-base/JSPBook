@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+    <description>JSP 2.0 Tech Book's Examples</description>
+    <display-name>JSPBook Examples</display-name>
+   
+    <context-param>    
+      <param-name>Init</param-name>    
+      <param-value>browser</param-value>
+    </context-param>
+	
+    <listener>
+      <listener-class>tw.com.javaworld.CH11.MyServletContextListener</listener-class>
+    </listener>
+    
+    <!-- Define JNDI JDBC DataSource of JSPBook -->
+    <!--
+    <resource-ref>
+      <description>JNDI JDBC DataSource of JSPBook</description>
+      <res-ref-name>jdbc/sample_db</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+    </resource-ref>
+    -->
+    <!-- Define servlet-mapped and path-mapped JSPBook filters -->
+    
+    <filter> 	
+      <filter-name>Hello</filter-name>	
+      <filter-class>tw.com.javaworld.CH11.HelloFilter</filter-class>
+    </filter>
+    
+    <filter> 	
+      <filter-name>SessionChecker</filter-name>	
+      <filter-class>tw.com.javaworld.CH11.SessionChecker</filter-class>	
+      <init-param>
+        <param-name>targetURI</param-name>		
+        <param-value>/CH11/Login.jsp</param-value>	
+      </init-param>
+    </filter>
+    
+    <filter> 	
+      <filter-name>WrapperSample</filter-name>	
+      <filter-class>tw.com.javaworld.CH11.WrapperSample</filter-class>
+    </filter>
+    
+    <filter>        
+      <filter-name>GZIPEncoder</filter-name>        
+      <filter-class>tw.com.javaworld.CH11.GZIPEncodeFilter</filter-class>
+    </filter>
+    
+    <filter>
+      <filter-name>setCharacterEncoding</filter-name>
+      <filter-class>tw.com.javaworld.CH11.SetCharacterEncodingFilter</filter-class>
+      <init-param>
+        <param-name>encoding</param-name>
+        <param-value>Big5</param-value>
+      </init-param>
+    </filter>
+    
+    <!-- Define filter mappings for the defined filters -->
+<!--      
+    <filter-mapping>	
+      <filter-name>Hello</filter-name>	
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+--> 
+
+<!--    
+    <filter-mapping>	
+      <filter-name>SessionChecker</filter-name>	
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+--> 
+
+<!--   
+    <filter-mapping>	
+      <filter-name>WrapperSample</filter-name>	
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+-->    
+
+<!--    
+    <filter-mapping>	
+      <filter-name>GZIPEncoder</filter-name>	
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+-->
+
+<!--
+    <filter-mapping>	   
+      <filter-name>setCharacterEncoding</filter-name>	   
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+-->
+    
+    <!-- Define servlets that are included in the JSPBook application -->
+    
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>tw.com.javaworld.CH2.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<url-pattern>/HelloServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Sayhi</servlet-name>
+        <servlet-class>tw.com.javaworld.CH2.Sayhi</servlet-class>
+    </servlet>
+    <servlet-mapping>
+  	<servlet-name>Sayhi</servlet-name>
+  	<url-pattern>/CH2/Sayhi</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>LoginChecker</servlet-name>
+        <servlet-class>tw.com.javaworld.CH11.LoginChecker</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>LoginChecker</servlet-name>
+        <url-pattern>/LoginChecker</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Model2Hello</servlet-name>
+        <servlet-class>tw.com.javaworld.CH19.Model2Hello</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Model2Hello</servlet-name>
+        <url-pattern>/CH19/Model2Hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShoppingServlet</servlet-name>
+        <servlet-class>tw.com.javaworld.CH19.ShoppingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShoppingServlet</servlet-name>
+        <url-pattern>/CH19/ShoppingServlet</url-pattern>
+    </servlet-mapping>    
+    
+    <!-- Confingure Proxool Properties File -->
+    <!--
+    <servlet>
+  	<servlet-name>ServletConfigurator</servlet-name>
+  	<servlet-class>org.logicalcobwebs.proxool.configuration.ServletConfigurator</servlet-class>
+  
+  	<init-param>
+    		<param-name>propertyFile</param-name>
+    		<param-value>WEB-INF/classes/Proxool.properties</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
+    </servlet>
+    -->
+    
+    <servlet>
+  	<servlet-name>Admin</servlet-name>
+  	<servlet-class>org.logicalcobwebs.proxool.admin.servlet.AdminServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+  	<servlet-name>Admin</servlet-name>
+  	<url-pattern>/Admin</url-pattern>
+    </servlet-mapping>
+    
+    
+    <jsp-config>
+    
+      <taglib>
+        <taglib-uri>Taglib</taglib-uri>    
+        <taglib-location>/WEB-INF/tlds/MyTaglib.tld</taglib-location>
+      </taglib>    
+      
+      <!--        
+      <jsp-property-group>
+        <url-pattern>*.jsp</url-pattern>
+        <page-encoding>MS950</page-encoding>
+      </jsp-property-group>
+      -->
+    </jsp-config>
+       
+
+    <welcome-file-list>
+      <welcome-file>index.jsp</welcome-file>
+      <welcome-file>index.html</welcome-file>
+    </welcome-file-list>  
+    
+    <mime-mapping>
+	<extension>doc</extension>
+	<mime-type>application/vnd.ms-word</mime-type>
+    </mime-mapping> 
+    <mime-mapping>
+	<extension>xls</extension>
+	<mime-type>application/vnd.ms-excel</mime-type>
+    </mime-mapping>     
+    <mime-mapping>
+	<extension>ppt</extension>
+	<mime-type>application/vnd.ms-powerpoint</mime-type>
+    </mime-mapping>
+    
+</web-app>

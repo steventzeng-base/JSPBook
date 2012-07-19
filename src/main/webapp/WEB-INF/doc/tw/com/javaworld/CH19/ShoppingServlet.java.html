@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.3">
+<TITLE>tw.com.javaworld.CH19.ShoppingServlet (Java2HTML)</TITLE>
+</HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">ShoppingServlet.java</font>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<FONT ID="LN">1 </FONT><A NAME="1"></A><FONT ID="Package">package</FONT> <A HREF="../../../../tw.com.javaworld.CH19.index.html" target="packageFrame">tw.com.javaworld.CH19</A>;
+<FONT ID="LN">2 </FONT><A NAME="2"></A>
+<FONT ID="LN">3 </FONT><A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/io/package-summary.html">java.io.*</A>;
+<FONT ID="LN">4 </FONT><A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/util/package-summary.html">java.util.*</A>;
+<FONT ID="LN">5 </FONT><A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/package-summary.html">javax.servlet.*</A>;
+<FONT ID="LN">6 </FONT><A NAME="6"></A><FONT ID="Import">import</FONT> <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/http/package-summary.html">javax.servlet.http.*</A>;
+<FONT ID="LN">7 </FONT><A NAME="7"></A>
+<FONT ID="LN">8 </FONT><A NAME="8"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> ShoppingServlet <FONT ID="Extends">extends</FONT> <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/http/HttpServlet.html">HttpServlet</A> {
+<FONT ID="LN">9 </FONT><A NAME="9"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> init(<A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/ServletConfig.html">ServletConfig</A> conf) <FONT ID="Throws">throws</FONT> <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/ServletException.html">ServletException</A> {
+<FONT ID="LN">10</FONT><A NAME="10"></A>        <FONT ID="Super">super</FONT>.init(conf);
+<FONT ID="LN">11</FONT><A NAME="11"></A>    }
+<FONT ID="LN">12</FONT><A NAME="12"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> doPost(<A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/http/HttpServletRequest.html">HttpServletRequest</A> req, <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/http/HttpServletResponse.html">HttpServletResponse</A> res)
+<FONT ID="LN">13</FONT><A NAME="13"></A>        <FONT ID="Throws">throws</FONT> <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/ServletException.html">ServletException</A>, <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/io/IOException.html">IOException</A> {
+<FONT ID="LN">14</FONT><A NAME="14"></A>        <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/http/HttpSession.html">HttpSession</A> session = req.getSession(<FONT ID="False">false</FONT>);
+<FONT ID="LN">15</FONT><A NAME="15"></A>
+<FONT ID="LN">16</FONT><A NAME="16"></A>        <FONT ID="SingleLineComment">// 若session為naull時，程式將導向 Error.html
+<FONT ID="LN">17</FONT><A NAME="17"></A></FONT>        <FONT ID="If">if</FONT> (session == <FONT ID="Null">null</FONT>) {
+<FONT ID="LN">18</FONT><A NAME="18"></A>            res.sendRedirect(<FONT ID="StringLiteral">"Error.html"</FONT>);
+<FONT ID="LN">19</FONT><A NAME="19"></A>        }
+<FONT ID="LN">20</FONT><A NAME="20"></A>        <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/util/Vector.html">Vector</A> buylist = (<A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/util/Vector.html">Vector</A>) session.getAttribute(<FONT ID="StringLiteral">"shoppingcart"</FONT>);
+<FONT ID="LN">21</FONT><A NAME="21"></A>        <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> action = req.getParameter(<FONT ID="StringLiteral">"action"</FONT>);
+<FONT ID="LN">22</FONT><A NAME="22"></A>
+<FONT ID="LN">23</FONT><A NAME="23"></A>        <FONT ID="If">if</FONT> (!action.equals(<FONT ID="StringLiteral">"CHECKOUT"</FONT>)) {
+<FONT ID="LN">24</FONT><A NAME="24"></A>
+<FONT ID="LN">25</FONT><A NAME="25"></A>            <FONT ID="SingleLineComment">//  刪除購物車中的書籍
+<FONT ID="LN">26</FONT><A NAME="26"></A></FONT>            <FONT ID="If">if</FONT> (action.equals(<FONT ID="StringLiteral">"DELETE"</FONT>)) {
+<FONT ID="LN">27</FONT><A NAME="27"></A>                <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> del = req.getParameter(<FONT ID="StringLiteral">"del"</FONT>);
+<FONT ID="LN">28</FONT><A NAME="28"></A>                <FONT ID="Int">int</FONT> d = (<FONT ID="New">new</FONT> <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/Integer.html">Integer</A>(del)).intValue();
+<FONT ID="LN">29</FONT><A NAME="29"></A>                buylist.removeElementAt(d);
+<FONT ID="LN">30</FONT><A NAME="30"></A>            }
+<FONT ID="LN">31</FONT><A NAME="31"></A>            <FONT ID="SingleLineComment">// 新增書籍至購物車中
+<FONT ID="LN">32</FONT><A NAME="32"></A></FONT>            <FONT ID="Else">else</FONT> <FONT ID="If">if</FONT> (action.equals(<FONT ID="StringLiteral">"ADD"</FONT>)) {
+<FONT ID="LN">33</FONT><A NAME="33"></A>                <FONT ID="Boolean">boolean</FONT> match = <FONT ID="False">false</FONT>;
+<FONT ID="LN">34</FONT><A NAME="34"></A>
+<FONT ID="LN">35</FONT><A NAME="35"></A>                <FONT ID="SingleLineComment">// 取得後來新增的書籍
+<FONT ID="LN">36</FONT><A NAME="36"></A></FONT>                <A HREF="../../../../tw/com/javaworld/CH19/Book.java.html">Book</A> abook = getBook(req);
+<FONT ID="LN">37</FONT><A NAME="37"></A>
+<FONT ID="LN">38</FONT><A NAME="38"></A>                <FONT ID="SingleLineComment">//新增第一本書籍至購物車時
+<FONT ID="LN">39</FONT><A NAME="39"></A></FONT>                <FONT ID="If">if</FONT> (buylist == <FONT ID="Null">null</FONT>) {
+<FONT ID="LN">40</FONT><A NAME="40"></A>                    buylist = <FONT ID="New">new</FONT> <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/util/Vector.html">Vector</A>();
+<FONT ID="LN">41</FONT><A NAME="41"></A>                    buylist.addElement(abook);
+<FONT ID="LN">42</FONT><A NAME="42"></A>                } <FONT ID="Else">else</FONT> {
+<FONT ID="LN">43</FONT><A NAME="43"></A>                    <FONT ID="For">for</FONT> (<FONT ID="Int">int</FONT> i = <FONT ID="IntegerLiteral">0</FONT>; i &lt; buylist.size(); i++) {
+<FONT ID="LN">44</FONT><A NAME="44"></A>                        <A HREF="../../../../tw/com/javaworld/CH19/Book.java.html">Book</A> book = (<A HREF="../../../../tw/com/javaworld/CH19/Book.java.html">Book</A>) buylist.elementAt(i);
+<FONT ID="LN">45</FONT><A NAME="45"></A>
+<FONT ID="LN">46</FONT><A NAME="46"></A>                        <FONT ID="SingleLineComment">// 假若新增的書籍和購物車的書籍一樣時
+<FONT ID="LN">47</FONT><A NAME="47"></A></FONT>                        <FONT ID="If">if</FONT> (book.getName().equals(abook.getName())) {
+<FONT ID="LN">48</FONT><A NAME="48"></A>                            book.setQuantity(
+<FONT ID="LN">49</FONT><A NAME="49"></A>                                book.getQuantity() + abook.getQuantity());
+<FONT ID="LN">50</FONT><A NAME="50"></A>                            buylist.setElementAt(book, i);
+<FONT ID="LN">51</FONT><A NAME="51"></A>                            match = <FONT ID="True">true</FONT>;
+<FONT ID="LN">52</FONT><A NAME="52"></A>                        } <FONT ID="SingleLineComment">//end of if name matches
+<FONT ID="LN">53</FONT><A NAME="53"></A></FONT>                    } <FONT ID="SingleLineComment">// end of for
+<FONT ID="LN">54</FONT><A NAME="54"></A></FONT>
+<FONT ID="LN">55</FONT><A NAME="55"></A>                    <FONT ID="SingleLineComment">// 假若新增的書籍和購物車的書籍不一樣時
+<FONT ID="LN">56</FONT><A NAME="56"></A></FONT>                    <FONT ID="If">if</FONT> (!match)
+<FONT ID="LN">57</FONT><A NAME="57"></A>                        buylist.addElement(abook);
+<FONT ID="LN">58</FONT><A NAME="58"></A>                }
+<FONT ID="LN">59</FONT><A NAME="59"></A>            }
+<FONT ID="LN">60</FONT><A NAME="60"></A>
+<FONT ID="LN">61</FONT><A NAME="61"></A>            session.setAttribute(<FONT ID="StringLiteral">"shoppingcart"</FONT>, buylist);
+<FONT ID="LN">62</FONT><A NAME="62"></A>            <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> url = <FONT ID="StringLiteral">"/CH19/EShop.jsp"</FONT>;
+<FONT ID="LN">63</FONT><A NAME="63"></A>            <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/ServletContext.html">ServletContext</A> sc = getServletContext();
+<FONT ID="LN">64</FONT><A NAME="64"></A>            <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/RequestDispatcher.html">RequestDispatcher</A> rd = sc.getRequestDispatcher(url);
+<FONT ID="LN">65</FONT><A NAME="65"></A>            rd.forward(req, res);
+<FONT ID="LN">66</FONT><A NAME="66"></A>        }
+<FONT ID="LN">67</FONT><A NAME="67"></A>
+<FONT ID="LN">68</FONT><A NAME="68"></A>        <FONT ID="SingleLineComment">// 結帳，計算購物車書籍價錢總數
+<FONT ID="LN">69</FONT><A NAME="69"></A></FONT>        <FONT ID="Else">else</FONT> <FONT ID="If">if</FONT> (action.equals(<FONT ID="StringLiteral">"CHECKOUT"</FONT>)) {
+<FONT ID="LN">70</FONT><A NAME="70"></A>            <FONT ID="Float">float</FONT> total = <FONT ID="IntegerLiteral">0</FONT>;
+<FONT ID="LN">71</FONT><A NAME="71"></A>            <FONT ID="For">for</FONT> (<FONT ID="Int">int</FONT> i = <FONT ID="IntegerLiteral">0</FONT>; i &lt; buylist.size(); i++) {
+<FONT ID="LN">72</FONT><A NAME="72"></A>                <A HREF="../../../../tw/com/javaworld/CH19/Book.java.html">Book</A> order = (<A HREF="../../../../tw/com/javaworld/CH19/Book.java.html">Book</A>) buylist.elementAt(i);
+<FONT ID="LN">73</FONT><A NAME="73"></A>                <FONT ID="Float">float</FONT> price = order.getPrice();
+<FONT ID="LN">74</FONT><A NAME="74"></A>                <FONT ID="Int">int</FONT> quantity = order.getQuantity();
+<FONT ID="LN">75</FONT><A NAME="75"></A>                total += (price * quantity);
+<FONT ID="LN">76</FONT><A NAME="76"></A>            }
+<FONT ID="LN">77</FONT><A NAME="77"></A>
+<FONT ID="LN">78</FONT><A NAME="78"></A>            <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> amount = <FONT ID="New">new</FONT> <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/Float.html">Float</A>(total).toString();
+<FONT ID="LN">79</FONT><A NAME="79"></A>            req.setAttribute(<FONT ID="StringLiteral">"amount"</FONT>, amount);
+<FONT ID="LN">80</FONT><A NAME="80"></A>            <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> url = <FONT ID="StringLiteral">"/CH19/Checkout.jsp"</FONT>;
+<FONT ID="LN">81</FONT><A NAME="81"></A>            <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/ServletContext.html">ServletContext</A> sc = getServletContext();
+<FONT ID="LN">82</FONT><A NAME="82"></A>            <A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/RequestDispatcher.html">RequestDispatcher</A> rd = sc.getRequestDispatcher(url);
+<FONT ID="LN">83</FONT><A NAME="83"></A>            rd.forward(req, res);
+<FONT ID="LN">84</FONT><A NAME="84"></A>        }
+<FONT ID="LN">85</FONT><A NAME="85"></A>    }
+<FONT ID="LN">86</FONT><A NAME="86"></A>
+<FONT ID="LN">87</FONT><A NAME="87"></A>    <FONT ID="Private">private</FONT> <A HREF="../../../../tw/com/javaworld/CH19/Book.java.html">Book</A> getBook(<A HREF="http://java.sun.com/j2ee/1.4/docs/api//javax/servlet/http/HttpServletRequest.html">HttpServletRequest</A> req) {
+<FONT ID="LN">88</FONT><A NAME="88"></A>        
+<FONT ID="LN">89</FONT><A NAME="89"></A>        <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> name = encoding(req.getParameter(<FONT ID="StringLiteral">"name"</FONT>));
+<FONT ID="LN">90</FONT><A NAME="90"></A>        <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> quantity = encoding(req.getParameter(<FONT ID="StringLiteral">"quantity"</FONT>));
+<FONT ID="LN">91</FONT><A NAME="91"></A>        <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> author = encoding(req.getParameter(<FONT ID="StringLiteral">"author"</FONT>));
+<FONT ID="LN">92</FONT><A NAME="92"></A>        <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> publisher = encoding(req.getParameter(<FONT ID="StringLiteral">"publisher"</FONT>));
+<FONT ID="LN">93</FONT><A NAME="93"></A>        <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> price = encoding(req.getParameter(<FONT ID="StringLiteral">"price"</FONT>));
+<FONT ID="LN">94</FONT><A NAME="94"></A>        
+<FONT ID="LN">95</FONT><A NAME="95"></A>        <A HREF="../../../../tw/com/javaworld/CH19/Book.java.html">Book</A> bk = <FONT ID="New">new</FONT> <A HREF="../../../../tw/com/javaworld/CH19/Book.java.html">Book</A>();
+<FONT ID="LN">96</FONT><A NAME="96"></A>
+<FONT ID="LN">97</FONT><A NAME="97"></A>        bk.setName(name);
+<FONT ID="LN">98</FONT><A NAME="98"></A>        bk.setAuthor(author);
+<FONT ID="LN">99</FONT><A NAME="99"></A>        bk.setPublisher(publisher);
+<FONT ID="LN">00</FONT><A NAME="100"></A>        bk.setPrice((<FONT ID="New">new</FONT> <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/Float.html">Float</A>(price)).floatValue());
+<FONT ID="LN">01</FONT><A NAME="101"></A>        bk.setQuantity((<FONT ID="New">new</FONT> <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/Integer.html">Integer</A>(quantity)).intValue());
+<FONT ID="LN">02</FONT><A NAME="102"></A>        <FONT ID="Return">return</FONT> bk;
+<FONT ID="LN">03</FONT><A NAME="103"></A>    }
+<FONT ID="LN">04</FONT><A NAME="104"></A>    
+<FONT ID="LN">05</FONT><A NAME="105"></A>    <FONT ID="Private">private</FONT> <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> encoding(<A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A> str) {
+<FONT ID="LN">06</FONT><A NAME="106"></A>    
+<FONT ID="LN">07</FONT><A NAME="107"></A>        <FONT ID="Try">try</FONT> {
+<FONT ID="LN">08</FONT><A NAME="108"></A>            str = <FONT ID="New">new</FONT> <A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/lang/String.html">String</A>(str.getBytes(<FONT ID="StringLiteral">"ISO-8859-1"</FONT>), <FONT ID="StringLiteral">"MS950"</FONT>);
+<FONT ID="LN">09</FONT><A NAME="109"></A>        } <FONT ID="Catch">catch</FONT> (<A HREF="http://java.sun.com/j2se/1.4.2/docs/api//java/io/UnsupportedEncodingException.html">UnsupportedEncodingException</A> uee) {
+<FONT ID="LN">10</FONT><A NAME="110"></A>            System.out.println(<FONT ID="StringLiteral">"UnsupportedEncodingException："</FONT> + uee.getMessage());
+<FONT ID="LN">11</FONT><A NAME="111"></A>        }
+<FONT ID="LN">12</FONT><A NAME="112"></A>        
+<FONT ID="LN">13</FONT><A NAME="113"></A>        <FONT ID="Return">return</FONT> str;
+<FONT ID="LN">14</FONT><A NAME="114"></A>    }
+<FONT ID="LN">15</FONT><A NAME="115"></A>}
+<FONT ID="LN">16</FONT><A NAME="116"></A></pre>
+</BODY>
+</HTML>

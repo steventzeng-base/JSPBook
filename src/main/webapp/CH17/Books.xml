@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="BIG5"?>
+<books>
+  <book>	
+    <title ISBN="A1195">JAVA PRIMER</title>	
+    <author>Dr.Lee</author>
+  </book>
+  <book>    
+    <title ISBN="C8254">JSP 技術手冊</title>	 
+    <author>上傑 林</author>
+  </book>
+</books>

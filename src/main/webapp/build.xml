@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+
+<project name="JSBook" default="compile" basedir=".">
+  <property environment="env" />
+  <property name="src" value="WEB-INF/src" />
+  <property name="classes" value="WEB-INF/classes" />
+  <property name="lib" value="WEB-INF/lib" /> 
+  <property name="dist" value="dist" />
+  
+  <path id="task.classpath">
+    <pathelement location="${classes}" />
+    <pathelement location="${lib}" /> 
+    
+    <!-- Tomcat 5.0.16 Servlet 2.4 API -->
+    <pathelement location="${lib}/servlet-api.jar" />
+    
+    <!-- Tomcat 5.0.16 JSP 2.0 API -->
+    <pathelement location="${lib}/jsp-api.jar" />
+    
+  </path>
+    
+  <target name="init" >
+    <echo>Init Complete !</echo>
+    <echo>ant home = ${ant.home} </echo>
+    <echo>java home = ${java.home} </echo>
+    <echo>user home = ${user.home} </echo>        
+    		
+  </target>
+  
+  <target name="compile" depends="init" >
+    <javac classpathref="task.classpath" srcdir="${src}" destdir="${classes}" />
+    <echo level="verbose">Seen with -verbose</echo>
+    <echo level="debug">Seen with -debug</echo>        
+    <echo>Compilation Complete !</echo>
+  </target>
+  
+  <target name="war" >
+    <jar jarfile="${dist}/JSPBook.war" basedir="."/>
+  </target>
+
+</project>
