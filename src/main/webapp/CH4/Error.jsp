@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=MS950" isErrorPage="true" %>
+<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
 <%@ page import="java.io.PrintWriter" %>
 
 <html>
@@ -7,11 +7,11 @@
 </head>
 <body>
 
-<h2>errorPage ªº½d¨Òµ{¦¡</h2>
+<h2>errorPage çš„ç¯„ä¾‹ç¨‹å¼</h2>
 
-<p>ErrorPage.jsp ¿ù»~²£¥Í¡G<I><%= exception %></I></p><br>
+<p>ErrorPage.jsp éŒ¯èª¤ç”¢ç”Ÿï¼š<I><%= exception %></I></p><br>
 <pre>
-°İÃD¦p¤U¡G<% exception.printStackTrace(new PrintWriter(out)); %>
+å•é¡Œå¦‚ä¸‹ï¼š<% exception.printStackTrace(new PrintWriter(out)); %>
 </pre>
 
 </body>

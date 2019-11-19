@@ -1,10 +1,10 @@
-<%@ page contentType="text/html;Big5" pageEncoding="Big5"%>
+<%@ page contentType="text/html;UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="tw.com.javaworld.CH10.*" %>
 
 <%!
-	// �ѩ�ϥΪ̦W��O�@�ɪ���B�]�w����@instance
-	// �G�ŧi�覡�����<jsp:useBean>��tag
+	// 由於使用者名單是共享物件且設定為單一instance
+	// 故宣告方式不能用<jsp:useBean>的tag
 
 	UserList userlist = UserList.getInstance();
 %>
@@ -13,16 +13,16 @@
 	String user_id = request.getParameter("user_id");
 
 
-	// �]�w�ϥΪ�id�i�J�l�ܪ���
+	// 設定使用者id進入追蹤物件中
 	usertrace.setUserName(user_id);
 
-	// �N�ϥΪ̰l�ܪ���[�Jsession��
+	// 將使用者追蹤物件加入session內
 	session.setAttribute("usertrace",usertrace);
 
-	// �N�ϥΪ̥[�J�ϥΪ̦W�椤
+	// 將使用者加入使用者名單中
 	userlist.addUser(usertrace.getUserName());
 
-	// �]�wsession�b10���������S�����ʴN��session�L��
+	// 設定session在10秒鐘之內沒有活動就使session無效
 	session.setMaxInactiveInterval(10);
 
 %>
@@ -34,13 +34,13 @@
 </head>
 <body>
 
-<h2>�u�W�ϥΪ̦W��</h2>
+<h2>線上使用者名單</h2>
 
 <center>
 <p>
 <textarea rows="9" cols="15">
 <%
-	// �N�u�W�ϥΪ̦W��L�X
+	// 將線上使用者名單印出
 	Enumeration elements = userlist.getList();
 
 	while(elements.hasMoreElements())

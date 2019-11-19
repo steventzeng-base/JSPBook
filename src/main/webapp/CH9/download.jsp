@@ -1,5 +1,5 @@
 <%@ page import="com.jspsmart.upload.*" %>
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -7,19 +7,19 @@
 </head>
 <body>
 
-<h2>ÀÉ®×¤U¸ü½d¨Ò - jspSmart</h2>
+<h2>æª”æ¡ˆä¸‹è¼‰ç¯„ä¾‹ - jspSmart</h2>
 
-<jsp:useBean id="mySmartUpload" scope="page" 
+<jsp:useBean id="mySmartUpload" scope="page"
                                                         class="com.jspsmart.upload.SmartUpload" />
 
-<%	
-	// SmartUpload¤§ªì©l¤Æ
-	mySmartUpload.initialize(pageContext);	
-	
-	//¥²¶·¦p¦¹«Å§i¡A§_«h±N·|§âÀÉ®×Åã¥Ü©óÂsÄý¾¹¤¤
-	mySmartUpload.setContentDisposition("inline;");	
-	
-	//±N sample.zip¤U¸ü¡A¤U¸ü¹w³]¦WºÙ¬°downloaded.zip
+<%
+	// SmartUploadä¹‹åˆå§‹åŒ–
+	mySmartUpload.initialize(pageContext);
+
+	//å¿…é ˆå¦‚æ­¤å®£å‘Šï¼Œå¦å‰‡å°‡æœƒæŠŠæª”æ¡ˆé¡¯ç¤ºæ–¼ç€è¦½å™¨ä¸­
+	mySmartUpload.setContentDisposition("inline;");
+
+	//å°‡ sample.zipä¸‹è¼‰ï¼Œä¸‹è¼‰é è¨­åç¨±ç‚ºdownloaded.zip
 	mySmartUpload.downloadFile("C:\\upload\\sample.zip",
 	                                                 "application/x-zip-compressed",
 	                                                 "downloaded.zip");

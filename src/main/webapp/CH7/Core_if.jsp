@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -7,12 +7,12 @@
 </head>
 <body>
 
-<h2><c:out value="<c:if> ªº¥Îªk" /></h2>
+<h2><c:out value="<c:if> çš„ç”¨æ³•" /></h2>
 
 <c:if test="${param.username == 'Admin'}" var="condition" scope="page">
-±z¦nAdmin¥ı¥Í
+æ‚¨å¥½Adminå…ˆç”Ÿ
 </c:if></br>
 
-°õ¦æµ²ªG¬°:${condition}
+åŸ·è¡Œçµæœç‚º:${condition}
 </body>
 </html>

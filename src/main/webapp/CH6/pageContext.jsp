@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -7,17 +7,17 @@
 </head>
 <body>
 
-<h2>EL¡Ùßt™´•Û pageContext</h2>
+<h2>ELÈö±Âê´Áâ©‰ª∂ pageContext</h2>
 
-\${pageContext.request.queryString}°G${pageContext.request.queryString}</br>
-\${pageContext.request.requestURL}°G${pageContext.request.requestURL}</br>
-\${pageContext.request.contextPath}°G${pageContext.request.contextPath}</br>
-\${pageContext.request.method}°G${pageContext.request.method}</br>
-\${pageContext.request.protocol}°G${pageContext.request.protocol}</br>
-\${pageContext.request.remoteUser}°G${pageContext.request.remoteUser}</br>
-\${pageContext.request.remoteAddr }°G${pageContext.request.remoteAddr}</br>
-\${pageContext.session.new}°G${pageContext.session.new}</br>
-\${pageContext.session.id}°G${pageContext.session.id}</br>
+\${pageContext.request.queryString}Ôºö${pageContext.request.queryString}</br>
+\${pageContext.request.requestURL}Ôºö${pageContext.request.requestURL}</br>
+\${pageContext.request.contextPath}Ôºö${pageContext.request.contextPath}</br>
+\${pageContext.request.method}Ôºö${pageContext.request.method}</br>
+\${pageContext.request.protocol}Ôºö${pageContext.request.protocol}</br>
+\${pageContext.request.remoteUser}Ôºö${pageContext.request.remoteUser}</br>
+\${pageContext.request.remoteAddr }Ôºö${pageContext.request.remoteAddr}</br>
+\${pageContext.session.new}Ôºö${pageContext.session.new}</br>
+\${pageContext.session.id}Ôºö${pageContext.session.id}</br>
 
 </body>
 </html>

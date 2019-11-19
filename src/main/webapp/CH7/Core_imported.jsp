@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<fmt:requestEncoding value="Big5" />
-<c:set var="output1" value="¨Ï¥ÎÄİ©Ê½d³ò¶Ç¨ìCore_import.jsp¤¤" scope="request"/>
+<fmt:requestEncoding value="UTF-8" />
+<c:set var="output1" value="ä½¿ç”¨å±¬æ€§ç¯„åœå‚³åˆ°Core_import.jspä¸­" scope="request"/>
 ${input1}</br>
 <c:out value="${param.input2}" escapeXml="true" />
 

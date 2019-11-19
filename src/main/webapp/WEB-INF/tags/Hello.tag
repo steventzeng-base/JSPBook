@@ -1,4 +1,4 @@
-<%@ tag pageEncoding="Big5" %>
+<%@ tag pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:out value="Hello ~ JSP §Þ³N¤â¥U 2" />
+<c:out value="Hello ~ JSP æŠ€è¡“æ‰‹å†Š 2" />

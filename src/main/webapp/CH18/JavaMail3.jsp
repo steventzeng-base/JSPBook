@@ -4,7 +4,7 @@
 <%@ page import="java.util.*,java.io.*" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -12,13 +12,13 @@
 </head>
 <body>
 
-<h2>§Q¥ÎJavaMail¨Ó¶Ç°e¹q¤l¶l¥ó - ªş¥[ÀÉ®×</h2>
+<h2>åˆ©ç”¨JavaMailä¾†å‚³é€é›»å­éƒµä»¶ - é™„åŠ æª”æ¡ˆ</h2>
 
 <%
 	InternetAddress[] address = null;
-	
-	request.setCharacterEncoding("MS950");
-	MultipartRequest multi = new MultipartRequest(request , "." , 5*1024*1024 , "MS950");
+
+	request.setCharacterEncoding("UTF-8");
+	MultipartRequest multi = new MultipartRequest(request , "." , 5*1024*1024 , "UTF-8");
 
 	String mailserver   = "ecd.pchome.com.tw";
 	String From         = multi.getParameter("From");
@@ -27,53 +27,53 @@
 	String type	    = multi.getParameter("Type");
 	String messageText  = multi.getParameter("Message");
 	String FileName     = multi.getFilesystemName("FileName");
-	
+
   	boolean sessionDebug = false;
 
 	try {
 
-  		// ³]©w©Ò­n¥ÎªºMail ¦øªA¾¹©M©Ò¨Ï¥Îªº¶Ç°e¨ó©w
+  		// è¨­å®šæ‰€è¦ç”¨çš„Mail ä¼ºæœå™¨å’Œæ‰€ä½¿ç”¨çš„å‚³é€å”å®š
   		java.util.Properties props = System.getProperties();
- 
+
   		props.put("mail.host",mailserver);
   		props.put("mail.transport.protocol","smtp");
-  
-  		// ²£¥Í·sªºSession ªA°È
+
+  		// ç”¢ç”Ÿæ–°çš„Session æœå‹™
   		javax.mail.Session mailSession = javax.mail.Session.getDefaultInstance(props,null);
  		mailSession.setDebug(sessionDebug);
-	
+
   		Message msg = new MimeMessage(mailSession);
-  
-  		// ³]©w¶Ç°e¶l¥óªºµo«H¤H
+
+  		// è¨­å®šå‚³é€éƒµä»¶çš„ç™¼ä¿¡äºº
  		 msg.setFrom(new InternetAddress(From));
-  
-  		// ³]©w¶Ç°e¶l¥ó¦Ü¦¬«H¤Hªº«H½c
+
+  		// è¨­å®šå‚³é€éƒµä»¶è‡³æ”¶ä¿¡äººçš„ä¿¡ç®±
   		address = InternetAddress.parse(to,false);
   		msg.setRecipients(Message.RecipientType.TO, address);
-  
-  		// ³]©w«H¤¤ªº¥DÃD 
+
+  		// è¨­å®šä¿¡ä¸­çš„ä¸»é¡Œ
   		msg.setSubject(Subject);
-  
-  		// ³]©w°e«Hªº®É¶¡
+
+  		// è¨­å®šé€ä¿¡çš„æ™‚é–“
   		msg.setSentDate(new Date());
 
   		if (FileName != null)
   		{
-    	  		File file = new File(FileName);	
-              
-	  		// ¦pªG¦³ªş¥[ÀÉ®×®É¡A¥ı±N¶l¥ó¤º®e³¡¥÷¥ı¦s°_¨Ó
-          		MimeBodyPart mbp1 = new MimeBodyPart();
-	      
- 	  		// ³]©w¶l¥ó¤º®eªº«¬ºA¬° text/plain ©Î text/html
-  			mbp1.setContent(messageText, type + ";charset=MS950");
+    	  		File file = new File(FileName);
 
-          		// ¦A¨Ó¹ïÀÉ®×§@³B²z
+	  		// å¦‚æœæœ‰é™„åŠ æª”æ¡ˆæ™‚ï¼Œå…ˆå°‡éƒµä»¶å…§å®¹éƒ¨ä»½å…ˆå­˜èµ·ä¾†
+          		MimeBodyPart mbp1 = new MimeBodyPart();
+
+ 	  		// è¨­å®šéƒµä»¶å…§å®¹çš„å‹æ…‹ç‚º text/plain æˆ– text/html
+  			mbp1.setContent(messageText, type + ";charset=UTF-8");
+
+          		// å†ä¾†å°æª”æ¡ˆä½œè™•ç†
           		MimeBodyPart mbp2 = new MimeBodyPart();
           		FileDataSource fds = new FileDataSource(FileName);
           		mbp2.setDataHandler(new DataHandler(fds));
-          		mbp2.setFileName(MimeUtility.encodeText(fds.getName(), "MS950", "B"));
+          		mbp2.setFileName(MimeUtility.encodeText(fds.getName(), "UTF-8", "B"));
 
-          		// ³Ì«á¦A±N¤GªÌ¾ã¦X°_¨Ó¡A·í§@¤@¥÷¶l¥ó°e¥X
+          		// æœ€å¾Œå†å°‡äºŒè€…æ•´åˆèµ·ä¾†ï¼Œç•¶ä½œä¸€ä»½éƒµä»¶é€å‡º
           		Multipart mp = new MimeMultipart();
           		mp.addBodyPart(mbp1);
           		mp.addBodyPart(mbp2);
@@ -81,15 +81,15 @@
    		}
    		else
    		{
-          		// ­Y¨S¦³ÀÉ®×®É¡A´Nª½±µ¦s¶l¥ó¤º®e          
-         		 msg.setContent(messageText,type + ";charset=MS950");
+          		// è‹¥æ²’æœ‰æª”æ¡ˆæ™‚ï¼Œå°±ç›´æ¥å­˜éƒµä»¶å…§å®¹
+         		 msg.setContent(messageText,type + ";charset=UTF-8");
    		}
 
   		Transport.send(msg);
-		out.println("¶l¥ó¤v¶¶§Q¶Ç°e");
-	
+		out.println("éƒµä»¶å·±é †åˆ©å‚³é€");
+
 	}
-    	catch (MessagingException mex) 
+    	catch (MessagingException mex)
     	{
 		mex.printStackTrace();
 	}

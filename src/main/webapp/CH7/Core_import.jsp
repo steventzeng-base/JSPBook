@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -7,14 +7,14 @@
 </head>
 <body>
 
-<h2><c:out value="<c:import> ªº¥Îªk" /></h2>
+<h2><c:out value="<c:import> çš„ç”¨æ³•" /></h2>
 
 
-<c:set var="input1" value="¨Ï¥ÎÄİ©Ê½d³ò¶Ç¨ìCore_imported.jsp¤¤" scope="request"/>
-¥]§tcore_imported.jsp¤¤<hr/>
+<c:set var="input1" value="ä½¿ç”¨å±¬æ€§ç¯„åœå‚³åˆ°Core_imported.jspä¸­" scope="request"/>
+åŒ…å«core_imported.jspä¸­<hr/>
 
-<c:import url="Core_imported.jsp" charEncoding="Big5">
-<c:param name="input2" value="¨Ï¥Î<c:param>¶Ç¨ìCore_imported.jsp¤¤" />
+<c:import url="Core_imported.jsp" charEncoding="UTF-8">
+<c:param name="input2" value="ä½¿ç”¨<c:param>å‚³åˆ°Core_imported.jspä¸­" />
 </c:import><hr/>
 
 ${output1}

@@ -1,4 +1,4 @@
-<%@ page info="JSP 2.0 §Ş³N¤â¥U" contentType="text/html;charset=Big5" %>
+<%@ page info="JSP 2.0 æŠ€è¡“æ‰‹å†Š" contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h2>page Áô§tª«¥ó</h2>
+<h2>page éš±å«ç‰©ä»¶</h2>
 Page Info = <%= ((javax.servlet.jsp.HttpJspPage)page).getServletInfo() %>
 
 </body>

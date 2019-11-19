@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="/WEB-INF/tlds/MyTaglib.tld" prefix="mytag" %>
 
 <html>
@@ -7,22 +7,22 @@
 </head>
 <body>
 
-<h2>myfont ¼ĞÅÒ</h2>
+<h2>myfont æ¨™ç±¤</h2>
 
 <mytag:myfont color="Blue">
-  myfontªº½d¨Òµ{¦¡
+  myfontçš„ç¯„ä¾‹ç¨‹å¼
 </mytag:myfont><br>
 
 <mytag:myfont color="Black" border="3" bgColor="white" >
-  myfontªº½d¨Òµ{¦¡
+  myfontçš„ç¯„ä¾‹ç¨‹å¼
 </mytag:myfont><br>
 
 <mytag:myfont color="Blue" fontSize="6" bgColor="#C0C0C0">
-  myfontªº½d¨Òµ{¦¡
+  myfontçš„ç¯„ä¾‹ç¨‹å¼
 </mytag:myfont><br>
 
 <mytag:myfont color="#C0C0C0" border="7" bgColor="#123456" fontSize="5">
-  myfontªº½d¨Òµ{¦¡
+  myfontçš„ç¯„ä¾‹ç¨‹å¼
 </mytag:myfont>
 
 </body>

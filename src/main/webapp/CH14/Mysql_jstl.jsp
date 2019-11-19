@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -9,9 +9,9 @@
 </head>
 <body>
 
-<h2>±N¸ê®Æ¦s¤J Mysql ¤¤ - ¨Ï¥Î JSTL ¼gªk</h2>
+<h2>å°‡è³‡æ–™å­˜å…¥ Mysql ä¸­ - ä½¿ç”¨ JSTL å¯«æ³•</h2>
 
-<fmt:requestEncoding value="MS950" />
+<fmt:requestEncoding value="UTF-8" />
 
 <c:set var="birth" value="1978/12/11" />
 <c:set var="sex" value="F" />
@@ -23,24 +23,24 @@
 		   password="browser" />
 
 <sql:update>
-  INSERT INTO employee(employee_id, last_name, first_name, birth, sex, email) 
+  INSERT INTO employee(employee_id, last_name, first_name, birth, sex, email)
   VALUES ( ? , ? , ? , ? , ? , ? )
-  
+
   <sql:param value="${employee_id}" />
   <sql:param value="${param.last_name}" />
   <sql:param value="${param.first_name}" />
   <sql:param value="${birth}" />
   <sql:param value="${sex}" />
-  <sql:param value="${email}" /> 
+  <sql:param value="${email}" />
 </sql:update>
 
 <sql:query var="result">
   SELECT * FROM employee
 </sql:query>
 
-±q employee ¨ú¥X©Ò¦³·s¼Wªº©m¦W¡G<br>
+å¾ employee å–å‡ºæ‰€æœ‰æ–°å¢çš„å§“åï¼š<br>
 <c:forEach items="${result.rows}" var="row" >
-·s¼W©m¦W¡G${row.last_name}
+æ–°å¢å§“åï¼š${row.last_name}
 	  ${row.first_name}<br>
 </c:forEach>
 

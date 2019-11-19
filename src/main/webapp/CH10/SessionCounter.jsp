@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -7,20 +7,20 @@
 </head>
 <body>
 
-<h2>¬ö¿ý¨Ï¥ÎªÌ¨ì¯¸¦¸¼Æ</h2>
+<h2>ç´€éŒ„ä½¿ç”¨è€…åˆ°ç«™æ¬¡æ•¸</h2>
 
 <c:set var="time" value="${sessionScope.time}" />
 
 <c:choose>
   <c:when test="${ time != NULL }">
   	<c:set var="time" value="${time + 1}" scope="session" />
-  	Åwªï¥úÁ{¥»¯¸<br>
-  	§A¬O²Ä ${sessionScope.time} ¦¸¥úÁ{¥»¯¸<br>
+  	æ­¡è¿Žå…‰è‡¨æœ¬ç«™<br>
+  	ä½ æ˜¯ç¬¬ ${sessionScope.time} æ¬¡å…‰è‡¨æœ¬ç«™<br>
   </c:when>
   <c:otherwise>
   	<c:set var="time" value="1" scope="session" />
-  	Åwªï¥úÁ{¥»¯¸<br>
-  	§A¬O²Ä ${sessionScope.time} ¦¸¥úÁ{¥»¯¸<br>
+  	æ­¡è¿Žå…‰è‡¨æœ¬ç«™<br>
+  	ä½ æ˜¯ç¬¬ ${sessionScope.time} æ¬¡å…‰è‡¨æœ¬ç«™<br>
   </c:otherwise>
 </c:choose>
 

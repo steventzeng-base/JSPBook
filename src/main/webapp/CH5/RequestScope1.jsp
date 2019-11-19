@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,10 +6,10 @@
 </head>
 <body>
 
-<h2>Request ½d³ò - request</h2>
+<h2>Request ç¯„åœ - request</h2>
 
-<%	
-	request.setAttribute("Name","mike");  	
+<%
+	request.setAttribute("Name","mike");
 	request.setAttribute("Password","browser");
 %>
 <jsp:forward page="RequestScope2.jsp"/>

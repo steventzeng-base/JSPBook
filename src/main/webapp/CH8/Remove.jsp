@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -7,13 +7,13 @@
 </head>
 <body>
 
- <h2>²¾°£ JavaBean</h2>
+ <h2>ç§»é™¤ JavaBean</h2>
 
 <jsp:useBean id="myBean" scope="request" class="tw.com.javaworld.CH8.Counter"/>
-<p>±z¤v°ÑÆ[<font color="red">
+<p>æ‚¨å·±åƒè§€<font color="red">
 <jsp:getProperty name="myBean" property="count"/>
-</font>¦¸</p>
-<p>Åwªï¦A¦¸°ÑÆ[</p>
+</font>æ¬¡</p>
+<p>æ­¡è¿å†æ¬¡åƒè§€</p>
 
 <c:remove var="myBean" scope="request" />
 

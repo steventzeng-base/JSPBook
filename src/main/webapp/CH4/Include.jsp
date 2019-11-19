@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,11 +6,11 @@
 </head>
 <body>
 
-<h2>include «ü¥O </h2>
+<h2>include æŒ‡ä»¤ </h2>
 
 <%@ include file="Hello.html" %>
-<%	
-	out.println("Åwªï¤j®a¶i¤JJSPªº¥@¬É");
+<%
+	out.println("æ­¡è¿Žå¤§å®¶é€²å…¥JSPçš„ä¸–ç•Œ");
 %>
 
 </body>

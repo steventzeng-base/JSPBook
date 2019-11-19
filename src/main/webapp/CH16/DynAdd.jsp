@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="JSPBook" tagdir="/WEB-INF/tags/" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -8,15 +8,15 @@
 </head>
 <body>
 
-<h2>Tag File ½d¨Ò</h2>
+<h2>Tag File ç¯„ä¾‹</h2>
 
 <JSPBook:DynAdd num1="111" num2="222" num3="444" >
-	
+
 	<jsp:attribute name="great">
-		<font color="red">SUM¡G${sum} ...</red>
+		<font color="red">SUMï¼š${sum} ...</red>
 	</jsp:attribute>
 	<jsp:attribute name="less">
-		<font color="blue">SUM¡G${sum} ...</red>
+		<font color="blue">SUMï¼š${sum} ...</red>
 	</jsp:attribute>
 </JSPBook:DynAdd>
 

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" isErrorPage="true" %>
+<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
 
 <html>
 <head>
@@ -6,12 +6,12 @@
 </head>
 <body>
 
-<h2>exception ª«¥ó</h2> 	
+<h2>exception ç‰©ä»¶</h2>
 
-Exception¡G<%= exception %><br>
-Message¡G<%= exception.getMessage() %><br>
-Localized Message¡G<%= exception.getLocalizedMessage() %><br>
-Stack Trace¡G<% exception.printStackTrace(new java.io.PrintWriter(out)); %><br>
+Exceptionï¼š<%= exception %><br>
+Messageï¼š<%= exception.getMessage() %><br>
+Localized Messageï¼š<%= exception.getLocalizedMessage() %><br>
+Stack Traceï¼š<% exception.printStackTrace(new java.io.PrintWriter(out)); %><br>
 
 </body>
 </html>

@@ -1,63 +1,69 @@
 package tw.com.javaworld.CH15;
 
-import javax.servlet.jsp.*;
-import javax.servlet.jsp.tagext.*;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.tagext.TagSupport;
 
 public class Myfont extends TagSupport {
 
-	private String bgColor = "#FFFFFF"; // πw≥]≠»°G•’¶‚  
-	private String color = "#000000"; // ¶r≈Èπw≥]∂¬¶‚  
-	private String align = "CENTER"; // πw≥]©~§§  
-	private String fontSize = "3"; // ¶r≈È§j§pπw≥]3  
-	private String border = "0"; // ™ÌÆÊ√‰ºeπw≥]¨∞0  
-	private String width = null; // ™ÌÆÊºe´◊¨∞ null  
-	private String bordercolor = "#000000"; // ™ÌÆÊ√‰ºe√C¶‚,πw≥]∂¬¶‚  
+    private String bgColor = "#FFFFFF"; // È†êË®≠ÂÄºÔºöÁôΩËâ≤
+    private String color = "#000000"; // Â≠óÈ´îÈ†êË®≠ÈªëËâ≤
+    private String align = "CENTER"; // È†êË®≠Â±Ö‰∏≠
+    private String fontSize = "3"; // Â≠óÈ´îÂ§ßÂ∞èÈ†êË®≠3
+    private String border = "0"; // Ë°®Ê†ºÈÇäÂØ¨È†êË®≠ÁÇ∫0
+    private String width = null; // Ë°®Ê†ºÂØ¨Â∫¶ÁÇ∫ null
+    private String bordercolor = "#000000"; // Ë°®Ê†ºÈÇäÂØ¨È°èËâ≤,È†êË®≠ÈªëËâ≤
 
-	public void setBgColor(String newBgColor) {
-		bgColor = newBgColor;
-	}
-	public void setColor(String newColor) {
-		color = newColor;
-	}
-	public void setAlign(String newAlign) {
-		align = newAlign;
-	}
-	public void setFontSize(String newFontSize) {
-		fontSize = newFontSize;
-	}
-	public void setBorder(String newBorder) {
-		border = newBorder;
-	}
-	public void setWidth(String newWidth) {
-		width = newWidth;
-	}
-	public void setBordercolor(String newBordercolor) {
-		bordercolor = newBordercolor;
-	}
-	
-	public int doStartTag() {
-		try {
-			JspWriter out = pageContext.getOut();
-			out.print("<table border=" + border + " bordercolor=" + bordercolor);
-			if (width != null) {
-				out.print(" WIDTH=\"" + width + "\" >");
-			}
-			out.print("><TD bgcolor=" + bgColor + ">");
-			out.print("<div align="	+ align + "><font size=" + fontSize + " color=" + color	+ "> ");
-		} catch (Exception e) {
-			System.out.println("Error in doStartTag of Myfont Handler Class: " + e);
-		}
-		return (EVAL_BODY_INCLUDE); 
-	}
-	
-	public int doEndTag() {
-		try {
-			JspWriter out = pageContext.getOut();
-			out.print("</td></tr></table>");
-		} catch (Exception e) {
-			System.out.println("Error in doEndTag of Myfont Handler Class: " + e);
-		}
-		return (EVAL_PAGE);
-		
-	}
+    public void setBgColor(String newBgColor) {
+        bgColor = newBgColor;
+    }
+
+    public void setColor(String newColor) {
+        color = newColor;
+    }
+
+    public void setAlign(String newAlign) {
+        align = newAlign;
+    }
+
+    public void setFontSize(String newFontSize) {
+        fontSize = newFontSize;
+    }
+
+    public void setBorder(String newBorder) {
+        border = newBorder;
+    }
+
+    public void setWidth(String newWidth) {
+        width = newWidth;
+    }
+
+    public void setBordercolor(String newBordercolor) {
+        bordercolor = newBordercolor;
+    }
+
+    public int doStartTag() {
+        try {
+            JspWriter out = pageContext.getOut();
+            out.print("<table border=" + border + " bordercolor=" + bordercolor);
+            if (width != null) {
+                out.print(" WIDTH=\"" + width + "\" >");
+            }
+            out.print("><TD bgcolor=" + bgColor + ">");
+            out.print("<div align=" + align + "><font size=" + fontSize + " color=" + color + "> ");
+        } catch (Exception e) {
+            System.out.println("Error in doStartTag of Myfont Handler Class: " + e);
+        }
+        return (EVAL_BODY_INCLUDE);
+    }
+
+    public int doEndTag() {
+        try {
+            JspWriter out = pageContext.getOut();
+            out.print("</td></tr></table>");
+        } catch (Exception e) {
+            System.out.println("Error in doEndTag of Myfont Handler Class: " + e);
+        }
+        return (EVAL_PAGE);
+
+    }
 }

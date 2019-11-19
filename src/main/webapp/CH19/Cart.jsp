@@ -1,6 +1,6 @@
-<%@ page import="java.util.*,tw.com.javaworld.CH19.Book" %>
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.*,tw.com.javaworld.CH19.Book" %>
 
 <html>
 <head>
@@ -12,17 +12,17 @@
 <c:if test="${ !empty buylist }" >
 
 <br>
-<h2>╔ь╚e╠zай╙╚╗╝╙╨╓╨╝e╕p╓U║G</h2><br>
+<h2>Г⌡╝Е┴█Ф┌╗ХЁ╪Г┴╘Х╩┼Г └Е┘╖Е╝╧Е╕┌Д╦▀О╪ </h2><br>
 <table border="1" width="631">
-  <tr bgcolor="#999999"> 
-    <td width="194"><div align="center"><b>╝я╕W</b></div></td>
-    <td width="81"><div align="center"><b>╖@╙л</b></div></td>
-    <td width="93"><div align="center"><b>╔X╙╘╙ю</b></div></td>
-	<td width="57"><div align="center"><b>╩Ы╝Ф</b></div></td>
-    <td width="47"><div align="center"><b>╪ф╤q</b></div></td>
+  <tr bgcolor="#999999">
+    <td width="194"><div align="center"><b>Ф⌡╦Е░█</b></div></td>
+    <td width="81"><div align="center"><b>Д╫°Х─┘</b></div></td>
+    <td width="93"><div align="center"><b>Е┤╨Г┴┬Г╓╬</b></div></td>
+	<td width="57"><div align="center"><b>Е┐╧Ф═╪</b></div></td>
+    <td width="47"><div align="center"><b>Ф∙╦И┤▐</b></div></td>
     <td width="119"><div align="center"><b></b></div></td>
   </tr>
-	  
+
  <c:forEach items="${buylist}" var="order" varStatus="status" >
 
  <tr>
@@ -36,17 +36,17 @@
    <input type="submit" value="Delete">
    <input type="hidden" name="del" value='${status.index}'>
    <input type="hidden" name="action" value="DELETE">
-  </form> 
+  </form>
   </td>
- </tr> 
- 
+ </tr>
+
  </c:forEach>
 
 </table>
 <p>
   <form name="checkoutForm" action="ShoppingServlet" method="POST">
     <input type="hidden" name="action" value="CHECKOUT">
-    <input type="submit" name="Checkout" value="╔I╢з╣╡╠b">
+    <input type="submit" name="Checkout" value="Д╩≤Ф╛╬Г╣░Е╦Ё">
   </form>
 
 </c:if>

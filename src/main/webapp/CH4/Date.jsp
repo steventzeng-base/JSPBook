@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.util.Date" %>
 
 <html>
@@ -7,11 +7,11 @@
 </head>
 <body>
 
-<h2>¨Ï¥Î java.util.Date Åã¥Ü¥Ø«e®É¶¡</h2>
+<h2>ä½¿ç”¨ java.util.Date é¡¯ç¤ºç›®å‰æ™‚é–“</h2>
 
-<%	
-	Date date = new Date();	
-	out.println("²{¦b®É¶¡¡G"+date);
+<%
+	Date date = new Date();
+	out.println("ç¾åœ¨æ™‚é–“ï¼š"+date);
 %>
 
 </body>

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -6,39 +6,39 @@
     <title>CH6 - ELOperator.jsp</title>
   </head>
   <body>
-  <h2>ELªº¹Bºâ¤l</h2>
-  
+  <h2>ELçš„é‹ç®—å­</h2>
+
   <c:set value="mike" var="username" scope="request" />
   <table border="1" width="50%" align="left">
-  <TR>    
-    <TR>   
-      <TH>¹Bºâ¦¡¤l</TH>   
-      <TH>µ²ªG</TH>  
-    </TR>  
+  <TR>
+    <TR>
+      <TH>é‹ç®—å¼å­</TH>
+      <TH>çµæœ</TH>
+    </TR>
     <TR>
       <TD>14 + 3</TD><TD>${14 + 3}</TD>
-    </TR>  
+    </TR>
     <TR>
       <TD>14 - 3</TD><TD>${14 - 3}</TD>
-    </TR>  
+    </TR>
     <TR>
       <TD>14 * 3</TD><TD>${14 * 3}</TD>
-    </TR>  
+    </TR>
     <TR>
       <TD>14 / 3</TD><TD>${14 / 3}</TD>
-    </TR>  
+    </TR>
     <TR>
       <TD>14 % 3</TD><TD>${14 % 3}</TD>
-    </TR>  
+    </TR>
     <TR>
       <TD>14 == 3</TD><TD>${14 == 3}</TD>
-    </TR>  
+    </TR>
     <TR>
       <TD>14 != 3</TD><TD>${14 != 3}</TD>
-    </TR>  
+    </TR>
     <TR>
       <TD>14 < 3</TD><TD>${14 < 3}</TD>
-    </TR>  
+    </TR>
     <TR>
       <TD>14 > 3</TD><TD>${14 > 3}</TD>
     </TR>
@@ -47,19 +47,19 @@
     </TR>
     <TR>
       <TD>14 >= 3</TD><TD>${14 >= 3}</TD>
-    </TR>  
+    </TR>
     <TR>
       <TD>true && false</TD><TD>${true && false}</TD>
     </TR>
     <TR>
       <TD>true || false</TD><TD>${true || false}</TD>
-    </TR>  
+    </TR>
     <TR>
       <TD>! false</TD><TD>${! false}</TD>
     </TR>
     <TR>
       <TD>empty username</TD><TD>${empty username}</TD>
-    </TR>  
+    </TR>
     <TR>
       <TD>empty password</TD><TD>${empty password}</TD>
     </TR>

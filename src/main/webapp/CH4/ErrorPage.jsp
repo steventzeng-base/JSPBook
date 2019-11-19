@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=MS950" errorPage="Error.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" errorPage="Error.jsp" %>
 
 <html>
 <head>
@@ -6,20 +6,20 @@
 </head>
 <body>
 
-<h2>errorPage ���d�ҵ{��</h2>
+<h2>errorPage 的範例程式</h2>
 
-<%!	
-	private double toDouble(String value)	
-	{			
-		return(Double.valueOf(value).doubleValue());	  
+<%!
+	private double toDouble(String value)
+	{
+		return(Double.valueOf(value).doubleValue());
 	}
 %>
-<%	
-	double num1 = toDouble(request.getParameter("num1"));	
+<%
+	double num1 = toDouble(request.getParameter("num1"));
 	double num2 = toDouble(request.getParameter("num2"));
 %>
-�z�ǤJ����ӼƦr���G<%= num1 %> �M <%= num2 %><br>
-��Ƭۥ[�� <%= (num1+num2) %>
+您傳入的兩個數字為：<%= num1 %> 和 <%= num2 %><br>
+兩數相加為 <%= (num1+num2) %>
 
 </body>
 </html>

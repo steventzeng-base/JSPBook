@@ -1,4 +1,4 @@
-<%@ page  import="javax.servlet.jsp.JspFactory" contentType="text/html;charset=Big5" %>
+<%@ page  import="javax.servlet.jsp.JspFactory" contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h2>¨ú±o JSP Container ª©¥» - JspFactory ª«¥ó</h2> 	
+<h2>å–å¾— JSP Container ç‰ˆæœ¬ - JspFactory ç‰©ä»¶</h2>
 
 <%
 	JspFactory factory = JspFactory.getDefaultFactory();

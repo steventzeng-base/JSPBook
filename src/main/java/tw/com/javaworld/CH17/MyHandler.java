@@ -1,71 +1,73 @@
 package tw.com.javaworld.CH17;
 
-import java.io.*;
-import java.util.*;
-import javax.xml.parsers.*;
-import org.xml.sax.*;
-import org.xml.sax.helpers.*;
+import org.xml.sax.Attributes;
+import org.xml.sax.helpers.DefaultHandler;
+
+import java.util.HashMap;
 
 public class MyHandler extends DefaultHandler {
 
-	private StringBuffer textBuffer;
-	private HashMap hm_TagData;
-	private String tagName;
-	
-	public MyHandler(HashMap hm_TagData) {
-		this.hm_TagData = hm_TagData;
-	} 
-	
-	//·íSAX¹J¨ìxml¦r¤¸®É¡A·|¦Û°Ê©I¥sªº¤èªk
-	public void characters(char[] ch, int start, int len) {
-		String s = new String(ch, start, len);
-		if (textBuffer == null) {
-			textBuffer = new StringBuffer(s);
-		} else {
-			textBuffer.append(s);
-		}
-	}
-	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) {
+    private StringBuffer textBuffer;
+    private HashMap hm_TagData;
+    private String tagName;
 
-		// §PÂ_­«½ÆªºÄÝ©Ê¦WºÙ         
-		int count = 1;
-		echoText();
-		if (atts != null) {
-			for (int i = 0; i < atts.getLength(); i++) {
-				// ÄÝ©Ê¦WºÙ 
-				String aName = atts.getLocalName(i);
-				if ("".equals(aName))
-					aName = atts.getQName(i);
-				String temp = aName;
-				while (hm_TagData.get(temp) != null) {
-					temp = aName + count;
-					count++;
-				}
-				hm_TagData.put(temp, atts.getValue(i));
-			}
-		}
-	}
-	public void endElement(String namespaceURI, String localName, String qName) {
-		String eName = localName;
-		// ¼ÐÅÒ¦WºÙ       	
-		if ("".equals(eName))
-			eName = qName;
-		// ·ínamespaceAware¬°false®É       	       	
-		int count = 1;
-		String temp = eName;
-		while (hm_TagData.get(temp) != null) {
-			temp = eName + count;
-			count++;
-		}
-		hm_TagData.put(temp, textBuffer);
-		echoText();
+    public MyHandler(HashMap hm_TagData) {
+        this.hm_TagData = hm_TagData;
+    }
 
-	}
-	private void echoText() {
-		if (textBuffer == null)
-			return;
-		String s = "" + textBuffer;
-		textBuffer = null;
-	}
+    //ç•¶SAXé‡åˆ°xmlå­—å…ƒæ™‚ï¼Œæœƒè‡ªå‹•å‘¼å«çš„æ–¹æ³•
+    public void characters(char[] ch, int start, int len) {
+        String s = new String(ch, start, len);
+        if (textBuffer == null) {
+            textBuffer = new StringBuffer(s);
+        } else {
+            textBuffer.append(s);
+        }
+    }
+
+    public void startElement(String namespaceURI, String localName, String qName, Attributes atts) {
+
+        // åˆ¤æ–·é‡è¤‡çš„å±¬æ€§åç¨±
+        int count = 1;
+        echoText();
+        if (atts != null) {
+            for (int i = 0; i < atts.getLength(); i++) {
+                // å±¬æ€§åç¨±
+                String aName = atts.getLocalName(i);
+                if ("".equals(aName))
+                    aName = atts.getQName(i);
+                String temp = aName;
+                while (hm_TagData.get(temp) != null) {
+                    temp = aName + count;
+                    count++;
+                }
+                hm_TagData.put(temp, atts.getValue(i));
+            }
+        }
+    }
+
+    public void endElement(String namespaceURI, String localName, String qName) {
+        String eName = localName;
+        // æ¨™ç±¤åç¨±
+        if ("".equals(eName))
+            eName = qName;
+        // ç•¶namespaceAwareç‚ºfalseæ™‚
+        int count = 1;
+        String temp = eName;
+        while (hm_TagData.get(temp) != null) {
+            temp = eName + count;
+            count++;
+        }
+        hm_TagData.put(temp, textBuffer);
+        echoText();
+
+    }
+
+    private void echoText() {
+        if (textBuffer == null)
+            return;
+        String s = "" + textBuffer;
+        textBuffer = null;
+    }
 
 }

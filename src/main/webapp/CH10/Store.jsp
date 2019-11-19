@@ -1,10 +1,10 @@
-<%@ page import="java.io.*,java.util.*" pageEncoding="Big5"%>
+<%@ page import="java.io.*,java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="tw.com.javaworld.CH10.Book" %>
 <%
 	Vector buylist = (Vector)session.getAttribute("shoppingcart");
     	String action = request.getParameter("action");
 
-    	//  ╖R╟ёай╙╚╗╝╓╓╙╨╝ядy
+    	//  Е┬╙И≥╓ХЁ╪Г┴╘Х╩┼Д╦╜Г └Ф⌡╦Г╠█
 	if (action.equals("DELETE"))
     	{
        		String del = request.getParameter("del");
@@ -12,7 +12,7 @@
        		buylist.removeElementAt(d);
     	}
 
-    	// ╥s╪W╝ядy╕эай╙╚╗╝╓╓
+    	// Ф√╟Е╒·Ф⌡╦Г╠█Х┤ЁХЁ╪Г┴╘Х╩┼Д╦╜
     	else if (action.equals("ADD"))
     	{
        		boolean match=false;
@@ -20,7 +20,7 @@
 	   	<jsp:useBean id="newBook" scope="page" class="tw.com.javaworld.CH10.Book"/>
 		<jsp:setProperty name="newBook" property="*"/>
 <%
-       		//╥s╪W╡д╓@╔╩╝ядy╕эай╙╚╗╝╝и
+       		//Ф√╟Е╒·Г╛╛Д╦─Ф°╛Ф⌡╦Г╠█Х┤ЁХЁ╪Г┴╘Х╩┼Ф≥┌
        		if (buylist == null)
        		{
        			buylist = new Vector();
@@ -32,7 +32,7 @@
        			{
            			Book book = (Book)buylist.elementAt(i);
 
-          			// ╟╡╜Y╥s╪W╙╨╝ядy╘Mай╙╚╗╝╙╨╝ядy╓@╪к╝и
+          			// Е│┤Х▀╔Ф√╟Е╒·Г └Ф⌡╦Г╠█Е▓▄ХЁ╪Г┴╘Х╩┼Г └Ф⌡╦Г╠█Д╦─Ф╗ёФ≥┌
            			if (book.getName().equals(newBook.getName()))
            			{
            				book.setQuantity(book.getQuantity()+newBook.getQuantity());
@@ -41,7 +41,7 @@
            			} //end of if name matches
        			} // end of for
 
-       			// ╟╡╜Y╥s╪W╙╨╝ядy╘Mай╙╚╗╝╙╨╝ядy╓ё╓@╪к╝и
+       			// Е│┤Х▀╔Ф√╟Е╒·Г └Ф⌡╦Г╠█Е▓▄ХЁ╪Г┴╘Х╩┼Г └Ф⌡╦Г╠█Д╦█Д╦─Ф╗ёФ≥┌
        			if (!match)
            		buylist.addElement(newBook);
        		}
@@ -58,15 +58,15 @@
 </head>
 <body>
 
-<h2>╔ь╚e╠zай╙╚╗╝╙╨╓╨╝e╕p╓U║G</h2>
+<h2>Г⌡╝Е┴█Ф┌╗ХЁ╪Г┴╘Х╩┼Г └Е┘╖Е╝╧Е╕┌Д╦▀О╪ </h2>
 
 <table border="1" width="631">
   <tr bgcolor="#999999">
-    <td width="194"><div align="center"><b>╝я╕W</b></div></td>
-    <td width="81"><div align="center"><b>╖@╙л</b></div></td>
-    <td width="93"><div align="center"><b>╔X╙╘╙ю</b></div></td>
-	<td width="57"><div align="center"><b>╩Ы╝Ф</b></div></td>
-    <td width="47"><div align="center"><b>╪ф╤q</b></div></td>
+    <td width="194"><div align="center"><b>Ф⌡╦Е░█</b></div></td>
+    <td width="81"><div align="center"><b>Д╫°Х─┘</b></div></td>
+    <td width="93"><div align="center"><b>Е┤╨Г┴┬Г╓╬</b></div></td>
+	<td width="57"><div align="center"><b>Е┐╧Ф═╪</b></div></td>
+    <td width="47"><div align="center"><b>Ф∙╦И┤▐</b></div></td>
     <td width="119"><div align="center"><b></b></div></td>
   </tr>
 <%
@@ -93,18 +93,18 @@
 %>
 </table>
 <p>
-  <a href="Store.html">д~дРай╙╚</a>
+  <a href="Store.html">Г╧╪Г╨▄ХЁ╪Г┴╘</a>
   <form name="checkoutForm" action="Checkout.jsp" method="POST">
     <input type="hidden" name="action" value="CHECKOUT">
-    <input type="submit" name="Checkout" value="╔I╢з╣╡╠b">
+    <input type="submit" name="Checkout" value="Д╩≤Ф╛╬Г╣░Е╦Ё">
   </form>
 <%
 	}
 	else
 	{
 %>
-	<h2>╔ь╚e╠z╙╨ай╙╚╗╝╗S╕Ё╔Т╕С╙╚╚~║G</h2><br>
-	<a href="Store.html">д~дРай╙╚</a>
+	<h2>Г⌡╝Е┴█Ф┌╗Г └ХЁ╪Г┴╘Х╩┼Ф╡▓Ф°┴Д╩╩Д╫∙Г┴╘Е⌠│О╪ </h2><br>
+	<a href="Store.html">Г╧╪Г╨▄ХЁ╪Г┴╘</a>
 <%
 	}
 %>

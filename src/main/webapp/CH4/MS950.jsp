@@ -1,15 +1,15 @@
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
-  <title>CH4 - MS950.jsp</title>
+  <title>CH4 - UTF-8.jsp</title>
 </head>
 <body>
 
-<h2>¨Ï¥Î MS950½s½X¡A¯à¥¿½TÅã¥Ü"ùÖ"</h2>
+<h2>ä½¿ç”¨ UTF-8ç·¨ç¢¼ï¼Œèƒ½æ­£ç¢ºé¡¯ç¤º"ç¢"</h2>
 
 <%
-	out.println("§»ùÖ¹q¸£¤½¥q");
+	out.println("å®ç¢é›»è…¦å…¬å¸");
 %>
 
 </body>

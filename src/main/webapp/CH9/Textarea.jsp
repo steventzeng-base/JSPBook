@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
@@ -7,32 +7,32 @@
 </head>
 <body>
 
-<h2>Textarea ½d¨Ò</h2>
-<fmt:requestEncoding value="MS950" />
+<h2>Textarea ç¯„ä¾‹</h2>
+<fmt:requestEncoding value="UTF-8" />
 
 <%
-	// ±N±qTextareaªº¸ê®Æ¡A¦s¤Jmsgªº¦r¦ê·í¤¤
+	// å°‡å¾žTextareaçš„è³‡æ–™ï¼Œå­˜å…¥msgçš„å­—ä¸²ç•¶ä¸­
 	String msg = request.getParameter("Message");
-	
-	// «Å§i¤@·s¦r¦ê¡Aªí¥Ü­×§ï¹L¦r¦ê«áªºµ²ªG
+
+	// å®£å‘Šä¸€æ–°å­—ä¸²ï¼Œè¡¨ç¤ºä¿®æ”¹éŽå­—ä¸²å¾Œçš„çµæžœ
 	String Message = "";
 
-	// msgLength ªí¥ÜTextarea ªº¦r¦êªø«×
+	// msgLength è¡¨ç¤ºTextarea çš„å­—ä¸²é•·åº¦
    	 int msgLength = msg.length();
 
-    	// Position ªí¥Ü¥Ø«e´å¼Ðªº¦ì¸m
+    	// Position è¡¨ç¤ºç›®å‰æ¸¸æ¨™çš„ä½ç½®
     	int Position = 0;
 
     	while (true)
     	{
-	      // ªí¥Ü0x0D ªº¦ì¸m
+	      // è¡¨ç¤º0x0D çš„ä½ç½®
 	      int index = msg.indexOf(0x0D, Position);
 
-        	      // °²³]³£¨S¦³´«¦æ®É¡Aª½±µÂ÷¶}while °j°é
+        	      // å‡è¨­éƒ½æ²’æœ‰æ›è¡Œæ™‚ï¼Œç›´æŽ¥é›¢é–‹while è¿´åœˆ
         	      if (index == -1) {    break;      }
 
-        	      // °²³]¦³´«¦æ®É¡A±N´«¦æ¤§«eªº¦r¦ê¡A
-	      	      // ©ñ¸m¨ì·sªºMessage¦r¦ê¤W¡A°µ§¹¦A¥[¤W <br>
+        	      // å‡è¨­æœ‰æ›è¡Œæ™‚ï¼Œå°‡æ›è¡Œä¹‹å‰çš„å­—ä¸²ï¼Œ
+	      	      // æ”¾ç½®åˆ°æ–°çš„Messageå­—ä¸²ä¸Šï¼Œåšå®Œå†åŠ ä¸Š <br>
         	      if (index > Position) {
 		  	  Message += msg.substring(Position, index);
         	      }
@@ -43,8 +43,8 @@
       	if (Position >= 0) {
         	       Message += msg.substring(Position);
       	}
-     
-     	out.println(Message);    
+
+     	out.println(Message);
 %>
 
 </body>

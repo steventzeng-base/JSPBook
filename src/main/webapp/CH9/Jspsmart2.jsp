@@ -1,5 +1,5 @@
 <%@ page import="com.jspsmart.upload.*" %>
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -7,32 +7,32 @@
 </head>
 <body>
 
-<h2>ÀÉ®×¤W¶Ç½d¨Ò - jspSmart</h2>
+<h2>æª”æ¡ˆä¸Šå‚³ç¯„ä¾‹ - jspSmart</h2>
 
 <jsp:useBean id="mySmartUpload" scope="page" class="com.jspsmart.upload.SmartUpload" />
-<%	
-	//­pºâÀÉ®×¤W¶Ç­Ó¼Æ
+<%
+	//è¨ˆç®—æª”æ¡ˆä¸Šå‚³å€‹æ•¸
 	int count=0;
-	
-	//SmartUpload¤§ªì©l¤Æ,¨Ï¥Î³o­Ójspsmart¤@©w­n¦b¤@¶}©l´N³o¼Ë«Å§i
+
+	//SmartUploadä¹‹åˆå§‹åŒ–,ä½¿ç”¨é€™å€‹jspsmartä¸€å®šè¦åœ¨ä¸€é–‹å§‹å°±é€™æ¨£å®£å‘Š
 	mySmartUpload.initialize(pageContext);
-	
-	//¨Ì¾Úform¤§¤º®e¤W¶Ç
+
+	//ä¾æ“šformä¹‹å…§å®¹ä¸Šå‚³
 	mySmartUpload.upload();
-	
-	//±N¤W¶ÇªºÀÉ®×¤@­Ó¤@­Ó¥X¨Ó³B²z
+
+	//å°‡ä¸Šå‚³çš„æª”æ¡ˆä¸€å€‹ä¸€å€‹å‡ºä¾†è™•ç†
 	for (int i=0;i<mySmartUpload.getFiles().getCount();i++)
 	{
-	    //§ì¥X¤@­ÓÀÉ®×
+	    //æŠ“å‡ºä¸€å€‹æª”æ¡ˆ
 	    com.jspsmart.upload.File myFile = mySmartUpload.getFiles().getFile(i);
-		
-	    //¦pªGÀÉ®×¦s¦b¡A°µ¦sÀÉªº°Ê§@
+
+	    //å¦‚æžœæª”æ¡ˆå­˜åœ¨ï¼Œåšå­˜æª”çš„å‹•ä½œ
 	    if (!myFile.isMissing()) {
-		
-	        //±NÀÉ®×¦s©ñ©óµ´¹ï¸ô®|ªº¦ì¸m
+
+	        //å°‡æª”æ¡ˆå­˜æ”¾æ–¼çµ•å°è·¯å¾‘çš„ä½ç½®
 	        myFile.saveAs("C:\\upload\\" + myFile.getFileName(), mySmartUpload.SAVE_PHYSICAL);
-			
-	        //Åã¥Ü¦¹¤W¶ÇÀÉ®×ªº¸Ô²Ó¸ê®Æ
+
+	        //é¡¯ç¤ºæ­¤ä¸Šå‚³æª”æ¡ˆçš„è©³ç´°è³‡æ–™
 	        out.println("FieldName = " + myFile.getFieldName() + "<BR>");
 	        out.println("Size = " + myFile.getSize() + "<BR>");
 	        out.println("FileName = " + myFile.getFileName() + "<BR>");
@@ -45,11 +45,11 @@
 	        count ++;
 	    }
 	}
-	
-	// Åã¥ÜÀ³¸Ó¤W¶ÇÀÉ®×¼Æ¥Ø 
+
+	// é¡¯ç¤ºæ‡‰è©²ä¸Šå‚³æª”æ¡ˆæ•¸ç›®
 	out.println("<BR>" + mySmartUpload.getFiles().getCount() + " files could be uploaded.<BR>");
-	
-	// Åã¥Ü¦¨¥\¤W¶ÇÀÉ®×¼Æ¥Ø	
+
+	// é¡¯ç¤ºæˆåŠŸä¸Šå‚³æª”æ¡ˆæ•¸ç›®
 	out.println(count + "file(s) uploaded.");
 %>
 

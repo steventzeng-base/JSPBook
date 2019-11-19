@@ -1,4 +1,4 @@
-<%@ page import="java.util.*" pageEncoding="Big5" %>
+<%@ page import="java.util.*" pageEncoding="UTF-8" %>
 <%@ page import="tw.com.javaworld.CH10.Book" %>
 
 <html>
@@ -7,15 +7,15 @@
 </head>
 <body>
 
-<h2>ºô¸ô®Ñ©± - µ²±b</h2>
+<h2>ç¶²è·¯æ›¸åº— - çµå¸³</h2>
 <center>
  <table border="1" width="631">
   <tr bgcolor="#999999">
-    <td width="194"><div align="center"><b>®Ñ¦W</b></div></td>
-    <td width="81"><div align="center"><b>§@ªÌ</b></div></td>
-    <td width="57"><div align="center"><b>¥Xª©ªÀ</b></div></td>
-    <td width="93"><div align="center"><b>»ù®æ</b></div></td>
-    <td width="47"><div align="center"><b>¼Æ¶q</b></div></td>
+    <td width="194"><div align="center"><b>æ›¸å</b></div></td>
+    <td width="81"><div align="center"><b>ä½œè€…</b></div></td>
+    <td width="57"><div align="center"><b>å‡ºç‰ˆç¤¾</b></div></td>
+    <td width="93"><div align="center"><b>åƒ¹æ ¼</b></div></td>
+    <td width="47"><div align="center"><b>æ•¸é‡</b></div></td>
     <td width="119"><div align="center"><b></b></div></td>
   </tr>
 <%
@@ -48,14 +48,14 @@
     <td></td>
     <td></td>
     <td></td>
-    <td><font color="red"><b>Á`ª÷ÃB¡G</b></font></td>
+    <td><font color="red"><b>ç¸½é‡‘é¡ï¼š</b></font></td>
     <td></td>
     <td><font color="red"><b>$<%= amount %></b></font></td>
     <td></td>
   </tr>
 </table>
 <p>
-<a href="Store.html">¬O§_Ä~ÄòÁÊª«</a>
+<a href="Store.html">æ˜¯å¦ç¹¼çºŒè³¼ç‰©</a>
 </center>
 
 </body>

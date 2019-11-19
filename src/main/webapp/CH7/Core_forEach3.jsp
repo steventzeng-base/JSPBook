@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -7,23 +7,23 @@
 </head>
 <body>
 
-<h2><c:out value="<c:forEach> varStatus ªº¥|ºØÄÝ©Ê" /></h2>
+<h2><c:out value="<c:forEach> varStatus çš„å››ç¨®å±¬æ€§" /></h2>
 
-<%	
-	String atts[] = new String [5];	
-	atts[0]="hello";	
-	atts[1]="this";	
-	atts[2]="is";	
+<%
+	String atts[] = new String [5];
+	atts[0]="hello";
+	atts[1]="this";
+	atts[2]="is";
 	atts[3]="a";
-	atts[4]="pen"; 	
+	atts[4]="pen";
 	request.setAttribute("atts", atts);
 %>
 <c:forEach items="${atts}" var="item"varStatus="s">
-<h2><c:out value="${item}"/>ªº¥|ºØÄÝ©Ê¡G</h2>
-index¡G${s.index}</br>
-count¡G${s.count}</br>
-first¡G${s.first}</br>
-last¡G${s.last}</br>
+<h2><c:out value="${item}"/>çš„å››ç¨®å±¬æ€§ï¼š</h2>
+indexï¼š${s.index}</br>
+countï¼š${s.count}</br>
+firstï¼š${s.first}</br>
+lastï¼š${s.last}</br>
 </c:forEach>
 
 </body>

@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="BIG5"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <books>
-  <book>	
-    <title ISBN="A1195">JAVA PRIMER</title>	
+  <book>
+    <title ISBN="A1195">JAVA PRIMER</title>
     <author>Dr.Lee</author>
   </book>
-  <book>    
-    <title ISBN="C8254">JSP §Þ³N¤â¥U</title>	 
-    <author>¤W³Ç ªL</author>
+  <book>
+    <title ISBN="C8254">JSP æŠ€è¡“æ‰‹å†Š</title>
+    <author>ä¸Šå‚‘ æž—</author>
   </book>
 </books>

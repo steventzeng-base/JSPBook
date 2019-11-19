@@ -1,115 +1,111 @@
 package tw.com.javaworld.CH19;
 
-import java.io.*;
-import java.util.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.util.Vector;
 
 public class ShoppingServlet extends HttpServlet {
-	public void init(ServletConfig conf) throws ServletException {
-		super.init(conf);
-	}
-	public void doPost(HttpServletRequest req, HttpServletResponse res)
-		throws ServletException, IOException {
-		HttpSession session = req.getSession(false);
+    public void init(ServletConfig conf) throws ServletException {
+        super.init(conf);
+    }
 
-		// ­Ysession¬°naull®É¡Aµ{¦¡±N¾É¦V Error.html
-		if (session == null) {
-			res.sendRedirect("Error.html");
-		}
-		Vector buylist = (Vector) session.getAttribute("shoppingcart");
-		String action = req.getParameter("action");
+    public void doPost(HttpServletRequest req, HttpServletResponse res)
+            throws ServletException, IOException {
+        HttpSession session = req.getSession(false);
 
-		if (!action.equals("CHECKOUT")) {
+        // è‹¥sessionç‚ºnaullæ™‚ï¼Œç¨‹å¼å°‡å°å‘ Error.html
+        if (session == null) {
+            res.sendRedirect("Error.html");
+        }
+        Vector buylist = (Vector) session.getAttribute("shoppingcart");
+        String action = req.getParameter("action");
 
-			//  §R°£ÁÊª«¨®¤¤ªº®ÑÄy
-			if (action.equals("DELETE")) {
-				String del = req.getParameter("del");
-				int d = (new Integer(del)).intValue();
-				buylist.removeElementAt(d);
-			}
-			// ·s¼W®ÑÄy¦ÜÁÊª«¨®¤¤
-			else if (action.equals("ADD")) {
-				boolean match = false;
+        if (!action.equals("CHECKOUT")) {
 
-				// ¨ú±o«á¨Ó·s¼Wªº®ÑÄy
-				Book abook = getBook(req);
+            //  åˆªé™¤è³¼ç‰©è»Šä¸­çš„æ›¸ç±
+            if (action.equals("DELETE")) {
+                String del = req.getParameter("del");
+                int d = (new Integer(del)).intValue();
+                buylist.removeElementAt(d);
+            }
+            // æ–°å¢æ›¸ç±è‡³è³¼ç‰©è»Šä¸­
+            else if (action.equals("ADD")) {
+                boolean match = false;
 
-				//·s¼W²Ä¤@¥»®ÑÄy¦ÜÁÊª«¨®®É
-				if (buylist == null) {
-					buylist = new Vector();
-					buylist.addElement(abook);
-				} else {
-					for (int i = 0; i < buylist.size(); i++) {
-						Book book = (Book) buylist.elementAt(i);
+                // å–å¾—å¾Œä¾†æ–°å¢çš„æ›¸ç±
+                Book abook = getBook(req);
 
-						// °²­Y·s¼Wªº®ÑÄy©MÁÊª«¨®ªº®ÑÄy¤@¼Ë®É
-						if (book.getName().equals(abook.getName())) {
-							book.setQuantity(
-								book.getQuantity() + abook.getQuantity());
-							buylist.setElementAt(book, i);
-							match = true;
-						} //end of if name matches
-					} // end of for
+                //æ–°å¢ç¬¬ä¸€æœ¬æ›¸ç±è‡³è³¼ç‰©è»Šæ™‚
+                if (buylist == null) {
+                    buylist = new Vector();
+                    buylist.addElement(abook);
+                } else {
+                    for (int i = 0; i < buylist.size(); i++) {
+                        Book book = (Book) buylist.elementAt(i);
 
-					// °²­Y·s¼Wªº®ÑÄy©MÁÊª«¨®ªº®ÑÄy¤£¤@¼Ë®É
-					if (!match)
-						buylist.addElement(abook);
-				}
-			}
+                        // å‡è‹¥æ–°å¢çš„æ›¸ç±å’Œè³¼ç‰©è»Šçš„æ›¸ç±ä¸€æ¨£æ™‚
+                        if (book.getName().equals(abook.getName())) {
+                            book.setQuantity(
+                                    book.getQuantity() + abook.getQuantity());
+                            buylist.setElementAt(book, i);
+                            match = true;
+                        } //end of if name matches
+                    } // end of for
 
-			session.setAttribute("shoppingcart", buylist);
-			String url = "/CH19/EShop.jsp";
-			ServletContext sc = getServletContext();
-			RequestDispatcher rd = sc.getRequestDispatcher(url);
-			rd.forward(req, res);
-		}
+                    // å‡è‹¥æ–°å¢çš„æ›¸ç±å’Œè³¼ç‰©è»Šçš„æ›¸ç±ä¸ä¸€æ¨£æ™‚
+                    if (!match)
+                        buylist.addElement(abook);
+                }
+            }
 
-		// µ²±b¡A­pºâÁÊª«¨®®ÑÄy»ù¿úÁ`¼Æ
-		else if (action.equals("CHECKOUT")) {
-			float total = 0;
-			for (int i = 0; i < buylist.size(); i++) {
-				Book order = (Book) buylist.elementAt(i);
-				float price = order.getPrice();
-				int quantity = order.getQuantity();
-				total += (price * quantity);
-			}
+            session.setAttribute("shoppingcart", buylist);
+            String url = "/CH19/EShop.jsp";
+            ServletContext sc = getServletContext();
+            RequestDispatcher rd = sc.getRequestDispatcher(url);
+            rd.forward(req, res);
+        }
 
-			String amount = new Float(total).toString();
-			req.setAttribute("amount", amount);
-			String url = "/CH19/Checkout.jsp";
-			ServletContext sc = getServletContext();
-			RequestDispatcher rd = sc.getRequestDispatcher(url);
-			rd.forward(req, res);
-		}
-	}
+        // çµå¸³ï¼Œè¨ˆç®—è³¼ç‰©è»Šæ›¸ç±åƒ¹éŒ¢ç¸½æ•¸
+        else if (action.equals("CHECKOUT")) {
+            float total = 0;
+            for (int i = 0; i < buylist.size(); i++) {
+                Book order = (Book) buylist.elementAt(i);
+                float price = order.getPrice();
+                int quantity = order.getQuantity();
+                total += (price * quantity);
+            }
 
-	private Book getBook(HttpServletRequest req) {
-		
-		String name = encoding(req.getParameter("name"));
-		String quantity = encoding(req.getParameter("quantity"));
-		String author = encoding(req.getParameter("author"));
-		String publisher = encoding(req.getParameter("publisher"));
-		String price = encoding(req.getParameter("price"));
-		
-		Book bk = new Book();
+            String amount = new Float(total).toString();
+            req.setAttribute("amount", amount);
+            String url = "/CH19/Checkout.jsp";
+            ServletContext sc = getServletContext();
+            RequestDispatcher rd = sc.getRequestDispatcher(url);
+            rd.forward(req, res);
+        }
+    }
 
-		bk.setName(name);
-		bk.setAuthor(author);
-		bk.setPublisher(publisher);
-		bk.setPrice((new Float(price)).floatValue());
-		bk.setQuantity((new Integer(quantity)).intValue());
-		return bk;
-	}
-	
-	private String encoding(String str) {
-	
-		try {
-			str = new String(str.getBytes("ISO-8859-1"), "MS950");
-		} catch (UnsupportedEncodingException uee) {
-			System.out.println("UnsupportedEncodingException¡G" + uee.getMessage());
-		}
-		
-		return str;
-	}
+    private Book getBook(HttpServletRequest req) {
+
+        String name = req.getParameter("name");
+        String quantity = req.getParameter("quantity");
+        String author = req.getParameter("author");
+        String publisher = req.getParameter("publisher");
+        String price = req.getParameter("price");
+
+        Book bk = new Book();
+
+        bk.setName(name);
+        bk.setAuthor(author);
+        bk.setPublisher(publisher);
+        bk.setPrice((new Float(price)).floatValue());
+        bk.setQuantity((new Integer(quantity)).intValue());
+        return bk;
+    }
 }

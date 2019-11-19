@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="JSPBook" tagdir="/WEB-INF/tags/" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -8,14 +8,14 @@
 </head>
 <body>
 
-<h2>Tag File ½d¨Ò</h2>
+<h2>Tag File ç¯„ä¾‹</h2>
 
 <JSPBook:NowDate>
-	²{¦b®É¶¡ In full format¡G${fullDate}<br>
-	²{¦b®É¶¡ In long format¡G${longDate}<br>
-	²{¦b®É¶¡ In medium format¡G${mediumDate}<br>
-	²{¦b®É¶¡ In short format¡G${shortDate}<br>
+	ç¾åœ¨æ™‚é–“ In full formatï¼š${fullDate}<br>
+	ç¾åœ¨æ™‚é–“ In long formatï¼š${longDate}<br>
+	ç¾åœ¨æ™‚é–“ In medium formatï¼š${mediumDate}<br>
+	ç¾åœ¨æ™‚é–“ In short formatï¼š${shortDate}<br>
 </JSPBook:NowDate>
-Now Date is¡G${shortDate}... 
+Now Date isï¼š${shortDate}...
 </body>
 </html>

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -7,10 +7,10 @@
 </head>
 <body>
 
-<h2>±q Hidden.html ±µ¦¬¨ìÁôÂÃÄæ¦ìªº¸ê®Æ</h2>
+<h2>å¾ Hidden.html æ¥æ”¶åˆ°éš±è—æ¬„ä½çš„è³‡æ–™</h2>
 
-name¡G<font color="red">${param.name}</font><br>
-number¡G<font color="red">${param.number}</font>
+nameï¼š<font color="red">${param.name}</font><br>
+numberï¼š<font color="red">${param.number}</font>
 
 <br><a href="/JSPBook/CH7/HelloJSTL.jsp" >Click here</a>
 
