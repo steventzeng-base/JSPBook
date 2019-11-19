@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,10 +6,10 @@
 </head>
 <body>
 
-<h2>Quoting ½d¨Òµ{¦¡ 2</h2>
+<h2>Quoting ç¯„ä¾‹ç¨‹å¼ 2</h2>
 
 <%
-	out.println("JSP¬O¥H%\>°µ¬°µ²§ô²Å¸¹");
+	out.println("JSPæ˜¯ä»¥%\>åšç‚ºçµæŸç¬¦è™Ÿ");
 %>
 
 </body>

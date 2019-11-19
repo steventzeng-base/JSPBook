@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="/WEB-INF/tlds/MyTaglib.tld" prefix="mytag" %>
 
 <html>
@@ -7,11 +7,11 @@
 </head>
 <body>
 
-<h2>RepeateSimpleTag ¼ĞÅÒ</h2>
+<h2>RepeateSimpleTag æ¨™ç±¤</h2>
 
 <mytag:Repeat count="5" >
   <jsp:attribute name="fragment">
-  ­«ÂĞ°õ¦æ ....<br>
+  é‡è¦†åŸ·è¡Œ ....<br>
   </jsp:attribute>
 </mytag:Repeat>
 </body>

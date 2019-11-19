@@ -1,5 +1,5 @@
 <%@ page import="com.jspsmart.upload.*" %>
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -7,36 +7,36 @@
 </head>
 <body>
 
-<h2>ÀÉ®×¤W¶Ç½d¨Ò - jspSmart</h2>
+<h2>æª”æ¡ˆä¸Šå‚³ç¯„ä¾‹ - jspSmart</h2>
 
 <jsp:useBean id="mySmartUpload" scope="page" class="com.jspsmart.upload.SmartUpload" />
 <%
-	
-	//­pºâÀÉ®×¤W¶Ç­Ó¼Æ	
-	int count=0;        	
-	
-	//SmartUpload¤§ªì©l¤Æ,¨Ï¥Î³o­Ójspsmart¤@©w­n¦b¤@¶}©l´N³o¼Ë«Å§i
-	mySmartUpload.initialize(pageContext);    	
 
-	//«Å§i¥i¥H¤W¶ÇªºÀÉ®×Ãþ«¬
+	//è¨ˆç®—æª”æ¡ˆä¸Šå‚³å€‹æ•¸
+	int count=0;
+
+	//SmartUploadä¹‹åˆå§‹åŒ–,ä½¿ç”¨é€™å€‹jspsmartä¸€å®šè¦åœ¨ä¸€é–‹å§‹å°±é€™æ¨£å®£å‘Š
+	mySmartUpload.initialize(pageContext);
+
+	//å®£å‘Šå¯ä»¥ä¸Šå‚³çš„æª”æ¡ˆé¡žåž‹
 	mySmartUpload.setAllowedFilesList("htm,html,txt,,");
 
-	//­­¨î¦sÀÉ¦ì¸m,¥i¦sÀÉ©óµ´¹ï¦ì¸m
+	//é™åˆ¶å­˜æª”ä½ç½®,å¯å­˜æª”æ–¼çµ•å°ä½ç½®
 	mySmartUpload.setDenyPhysicalPath(false);
 
-	//¨Ì¾Ú form¤§¤º®e¤W¶Ç	
+	//ä¾æ“š formä¹‹å…§å®¹ä¸Šå‚³
 	mySmartUpload.upload();
 
-	//±NÀÉ®×¥Î­ì¥»ªº¦W¦r¦s©ñ©óserver¤Wªº¬Û¹ï¸ô®|
+	//å°‡æª”æ¡ˆç”¨åŽŸæœ¬çš„åå­—å­˜æ”¾æ–¼serverä¸Šçš„ç›¸å°è·¯å¾‘
 	try {
 		 count = mySmartUpload.save("C:\\upload\\", mySmartUpload.SAVE_PHYSICAL);
-	  
+
 	} catch (Exception e)  {
 
 	 	 out.println("<b>Wrong selection : </b>" + e.toString());
 	 }
-   		
-	//¦L¥XÁ`¦@¤W¶ÇÀÉ®×­Ó¼Æ
+
+	//å°å‡ºç¸½å…±ä¸Šå‚³æª”æ¡ˆå€‹æ•¸
 	out.println(count + " file(s) uploaded.");
 %>
 

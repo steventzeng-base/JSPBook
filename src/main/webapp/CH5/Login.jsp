@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,24 +6,24 @@
 </head>
 <body>
 
-<h2>javax.servlet.http.HttpSession - session ª«¥ó</h2> 	
+<h2>javax.servlet.http.HttpSession - session ç‰©ä»¶</h2>
 <form action=Login.jsp method="POST" >
 Login Name: <input type="text" name="Name"><br>
 Login Password: <input type="text" name="Password" ><br>
 <input type="submit" value="Send"><br>
 </form>
 
-<%	if (request.getParameter("Name") != null && request.getParameter("Password") != null) {		
+<%	if (request.getParameter("Name") != null && request.getParameter("Password") != null) {
 		String Name = request.getParameter("Name");
 		String Password = request.getParameter("Password");
-		
-		if (Name.equals("mike") && Password.equals("1234")) {			
+
+		if (Name.equals("mike") && Password.equals("1234")) {
 			session.setAttribute("Login", "OK");
 			response.sendRedirect("Member.jsp");
 		}
-		else {			
-			out.println("µn¤J¿ù»~¡A½Ð¿é¤J¥¿½T¦WºÙ");		
-		}	
+		else {
+			out.println("ç™»å…¥éŒ¯èª¤ï¼Œè«‹è¼¸å…¥æ­£ç¢ºåç¨±");
+		}
 	}
 %>
 

@@ -1,4 +1,4 @@
-<%@ tag pageEncoding="Big5" %>
+<%@ tag pageEncoding="UTF-8" %>
 <%@ tag dynamic-attributes="numColumn" %>
 <%@ attribute name="great" fragment="true" %>
 <%@ attribute name="less" fragment="true" %>
@@ -14,5 +14,5 @@
   </c:if>
   <c:if test="${sum < 1000}" >
   	<jsp:invoke fragment="less" />
-  </c:if>  
+  </c:if>
 </c:if>

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,10 +6,10 @@
 </head>
 <body>
 
-<h2>Quoting �d�ҵ{�� 3</h2>
+<h2>Quoting 範例程式 3</h2>
 
 <%
-	out.println("JSP�J�� \'�B\"�B\\�B&lt;%�B%\> �ɻݭn���A�����ק�");
+	out.println("JSP遇到 \'、\"、\\、&lt;%、%\> 時需要做適當的修改");
 %>
 
 </body>

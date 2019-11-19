@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
-Hello ... ╠z╕n
-╥Pаб╠z╡д<font color="red"><jsp:getProperty name="myBean" property="count"/></font>╕╦╙╨╔За{
+Hello ... Ф┌╗Е╔╫
+Ф└÷Х╛²Ф┌╗Г╛╛<font color="red"><jsp:getProperty name="myBean" property="count"/></font>Ф╛║Г └Е┘┴Х┤╗

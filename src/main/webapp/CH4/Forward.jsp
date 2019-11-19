@@ -3,5 +3,5 @@
 </jsp:forward>
 
 <%
-     out.println("¤£·|°õ¦æ !!!");
+     out.println("ä¸æœƒåŸ·è¡Œ !!!");
 %>

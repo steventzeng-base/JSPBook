@@ -1,7 +1,7 @@
 <%@ page import="javax.xml.parsers.*" %>
 <%@ page import="org.w3c.dom.*" %>
 <%@ page import="java.util.*,java.io.*" %>
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -9,44 +9,44 @@
 </head>
 <body>
 
-<h2>¨Ï¥Î JAXP DOM ­åªR XML ¤å¥ó</h2>
+<h2>ä½¿ç”¨ JAXP DOM å‰–æ XML æ–‡ä»¶</h2>
 
-<%	
-	try 
-	{		
-	    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-	    
-	    //Àò±oDocumentBuilderªº¤@­Ó¹êÅé		
-	    DocumentBuilder builder = factory.newDocumentBuilder();		
-	    
-	    //¸ÑªR¤å¥ó¡A¨ÃÀò±o¤@­ÓDocument¹êÅé		
-	    Document doc = builder.parse("http://localhost:8080/JSPBook/CH17/Books.xml");		
-	    
-	    //Àò±o®Ú¸`ÂI books		
-	    Element elmtBooksInfo = doc.getDocumentElement();		
-	    
-	    //±o¨ì©Ò¦³book¸`ÂI		
-	    NodeList nlBook = elmtBooksInfo.getElementsByTagName("book");		
-	    
-	    //°j°é¿é¥X¨C¤@¥»®Ñªº¸ê®Æ		
-	    for (int i = 0; i < nlBook.getLength(); i++)		
-	    {			
-	        //·í«ebook¸`ÂI¼ĞÅÒ			
-	        Element elmtBook = (Element)nlBook.item(i);			
-	        NodeList nlCurrent = elmtBook.getElementsByTagName("title");			
-	        
-	        out.println("®Ñ¦W¡G" + ((Element)nlCurrent.item(0)).getFirstChild().getNodeValue() + "</BR>");			
-	        out.println("ISBN¡G" + ((Element)nlCurrent.item(0)).getAttribute("ISBN") + "</BR>");						
-	        
-	        nlCurrent = elmtBook.getElementsByTagName("author");						
-	        
-	        out.println("§@ªÌ¡G" + ((Element)nlCurrent.item(0)).getFirstChild().getNodeValue() + "</BR>");			
-	        out.println("------------------------------------" + "</BR>");		
-	    }	
-	}	
-	catch (Exception pce)	
+<%
+	try
 	{
-	    System.out.println(pce);	
+	    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+
+	    //ç²å¾—DocumentBuilderçš„ä¸€å€‹å¯¦é«”
+	    DocumentBuilder builder = factory.newDocumentBuilder();
+
+	    //è§£ææ–‡ä»¶ï¼Œä¸¦ç²å¾—ä¸€å€‹Documentå¯¦é«”
+	    Document doc = builder.parse("http://localhost:8080/JSPBook/CH17/Books.xml");
+
+	    //ç²å¾—æ ¹ç¯€é» books
+	    Element elmtBooksInfo = doc.getDocumentElement();
+
+	    //å¾—åˆ°æ‰€æœ‰bookç¯€é»
+	    NodeList nlBook = elmtBooksInfo.getElementsByTagName("book");
+
+	    //è¿´åœˆè¼¸å‡ºæ¯ä¸€æœ¬æ›¸çš„è³‡æ–™
+	    for (int i = 0; i < nlBook.getLength(); i++)
+	    {
+	        //ç•¶å‰bookç¯€é»æ¨™ç±¤
+	        Element elmtBook = (Element)nlBook.item(i);
+	        NodeList nlCurrent = elmtBook.getElementsByTagName("title");
+
+	        out.println("æ›¸åï¼š" + ((Element)nlCurrent.item(0)).getFirstChild().getNodeValue() + "</BR>");
+	        out.println("ISBNï¼š" + ((Element)nlCurrent.item(0)).getAttribute("ISBN") + "</BR>");
+
+	        nlCurrent = elmtBook.getElementsByTagName("author");
+
+	        out.println("ä½œè€…ï¼š" + ((Element)nlCurrent.item(0)).getFirstChild().getNodeValue() + "</BR>");
+	        out.println("------------------------------------" + "</BR>");
+	    }
+	}
+	catch (Exception pce)
+	{
+	    System.out.println(pce);
 	}
 %>
 

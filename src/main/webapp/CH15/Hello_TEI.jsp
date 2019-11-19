@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="/WEB-INF/tlds/MyTaglib.tld" prefix="mytag" %>
 
 <html>

@@ -1,39 +1,39 @@
 package tw.com.javaworld.CH10;
 
-import java.util.*;
+import java.util.Enumeration;
+import java.util.Vector;
 
 public class UserList {
-	private Vector container;
+    // UserList ç®—æ˜¯ä¸€å€‹å®¹å™¨æ•´å€‹æ‡‰ç”¨ç¨‹å¼å…§åªæœ‰ä¸€å€‹ä½¿ç”¨è€…åˆ—è¡¨é¡åˆ¥
+    private static UserList instance = new UserList();
+    private Vector container;
 
-	// UserList ºâ¬O¤@­Ó®e¾¹¾ã­ÓÀ³¥Îµ{¦¡¤º¥u¦³¤@­Ó¨Ï¥ÎªÌ¦CªíÃş§O  
-	private static UserList instance = new UserList();
+    // ä»¥privateçš„æ–¹å¼å‘¼å«å»ºæ§‹å­ï¼Œé¿å…è¢«å¤–ç•Œç”¢ç”Ÿæ–°instance
+    private UserList() {
+        container = new Vector();
+    }
 
-	// ¥Hprivateªº¤è¦¡©I¥s«Øºc¤l¡AÁ×§K³Q¥~¬É²£¥Í·sinstance  
-	private UserList() {
-		container = new Vector();
-	}
+    // ä¾›å¤–ç•Œä½¿ç”¨çš„instance
+    public static UserList getInstance() {
+        return instance;
+    }
 
-	// ¨Ñ¥~¬É¨Ï¥Îªºinstance  
-	public static UserList getInstance() {
-		return instance;
-	}
+    // æ–°å¢ä½¿ç”¨è€…åˆ°ä½¿ç”¨è€…åˆ—è¡¨å…§
+    public void addUser(String user) {
+        if (user != null) {
+            container.addElement(user);
+        }
+    }
 
-	// ·s¼W¨Ï¥ÎªÌ¨ì¨Ï¥ÎªÌ¦Cªí¤º  
-	public void addUser(String user) {
-		if (user != null) {
-			container.addElement(user);
-		}
-	}
+    // åˆ—å‡ºæ‰€æœ‰ç·šä¸Šä½¿ç”¨è€…
+    public Enumeration getList() {
+        return container.elements();
+    }
 
-	// ¦C¥X©Ò¦³½u¤W¨Ï¥ÎªÌ  
-	public Enumeration getList() {
-		return container.elements();
-	}
-
-	// ²¾°£¤wÂ÷½u¤§¨Ï¥ÎªÌ  
-	public void removeUser(String user) {
-		if (user != null) {
-			container.removeElement(user);
-		}
-	}
+    // ç§»é™¤å·²é›¢ç·šä¹‹ä½¿ç”¨è€…
+    public void removeUser(String user) {
+        if (user != null) {
+            container.removeElement(user);
+        }
+    }
 }

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,8 +6,8 @@
 </head>
 <body>
 
-<h2>Page ½d³ò - pageContext</h2>
-<%	
+<h2>Page ç¯„åœ - pageContext</h2>
+<%
 	String Name = (String)pageContext.getAttribute("Name");
 	String Password = (String)pageContext.getAttribute("Password");
 	out.println("Name = "+Name);

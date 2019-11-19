@@ -1,7 +1,7 @@
 <%@ page import="org.jdom.*" %>
 <%@ page import="org.jdom.input.*" %>
 <%@ page import="java.util.*,java.io.*" %>
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -9,34 +9,34 @@
 </head>
 <body>
 
-<h2>¨Ï¥Î JDOM ­åªR XML ¤å¥ó</h2>
+<h2>ä½¿ç”¨ JDOM å‰–æ XML æ–‡ä»¶</h2>
 
-<%	
-	Element bookElement;	
+<%
+	Element bookElement;
 	Element titleElement;
-	Element authorElement;	
-	
-	// «Ø¥ß SAXBulder	
-	SAXBuilder builder = new SAXBuilder(false);		
-	
-	// «Ø¥ß JODM¤å¥ó	
-	Document doc = builder.build("http://localhost:8080/JSPBook/CH17/Books.xml");                
-	
-	Element rootElement = doc.getRootElement();   	
-	List books = rootElement.getChildren("book");		
-	Iterator i = books.iterator();     		
-	
-	while (i.hasNext()) 
+	Element authorElement;
+
+	// å»ºç«‹ SAXBulder
+	SAXBuilder builder = new SAXBuilder(false);
+
+	// å»ºç«‹ JODMæ–‡ä»¶
+	Document doc = builder.build("http://localhost:8080/JSPBook/CH17/Books.xml");
+
+	Element rootElement = doc.getRootElement();
+	List books = rootElement.getChildren("book");
+	Iterator i = books.iterator();
+
+	while (i.hasNext())
 	{
-	   bookElement = (Element) i.next();	      
-	   titleElement = bookElement.getChild("title");	      
-	   authorElement = bookElement.getChild("author");	      
-	   String ISBN = titleElement.getAttributeValue("ISBN");	      
-	   
-	   out.println("®Ñ¦W¡G" + titleElement.getText() + "</BR>");	      
-	   out.println("ISBN¡G" + ISBN + "</BR>");		      
-	   out.println("§@ªÌ¡G" + authorElement.getText() + "</BR>");	      
-	   out.println("------------------------------------" + "</BR>");    	
+	   bookElement = (Element) i.next();
+	   titleElement = bookElement.getChild("title");
+	   authorElement = bookElement.getChild("author");
+	   String ISBN = titleElement.getAttributeValue("ISBN");
+
+	   out.println("æ›¸åï¼š" + titleElement.getText() + "</BR>");
+	   out.println("ISBNï¼š" + ISBN + "</BR>");
+	   out.println("ä½œè€…ï¼š" + authorElement.getText() + "</BR>");
+	   out.println("------------------------------------" + "</BR>");
 	}
 %>
 

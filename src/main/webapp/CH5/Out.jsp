@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,10 +6,10 @@
 </head>
 <body>
 
-<h2>javax.servlet.jsp.JspWriter - out ª«¥ó</h2>
+<h2>javax.servlet.jsp.JspWriter - out ç‰©ä»¶</h2>
 <%
 	int BufferSize = out.getBufferSize();
-	int Available = out.getRemaining();	
+	int Available = out.getRemaining();
 	int Used = BufferSize - Available;
 %>
 BufferSize : <%= BufferSize %><br>

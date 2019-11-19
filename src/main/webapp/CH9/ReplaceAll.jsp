@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
@@ -6,8 +6,8 @@
 </head>
 <body>
 
-<h2>Textarea ½d¨Ò - ¨Ï¥Î replaceAll( )</h2>
-<fmt:requestEncoding value="MS950" />
+<h2>Textarea ç¯„ä¾‹ - ä½¿ç”¨ replaceAll( )</h2>
+<fmt:requestEncoding value="UTF-8" />
 
 <%
 	String msg = request.getParameter("Message");

@@ -1,4 +1,4 @@
-<%@ page import="java.util.Enumeration" contentType="text/html;charset=Big5" %>
+<%@ page import="java.util.Enumeration" contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,13 +6,13 @@
 </head>
 <body>
 
-<h2>javax.servlet.jsp.PageContext - pageContext ª«¥ó</h2> 	
+<h2>javax.servlet.jsp.PageContext - pageContext ç‰©ä»¶</h2>
 
-<%	
-	Enumeration enum = pageContext.getAttributeNamesInScope(PageContext.APPLICATION_SCOPE );		
-	while (enum.hasMoreElements())	
+<%
+	Enumeration enum = pageContext.getAttributeNamesInScope(PageContext.APPLICATION_SCOPE );
+	while (enum.hasMoreElements())
 	{
-		out.println("application attribute¡G"+enum.nextElement( ) +"<br>");	
+		out.println("application attributeï¼š"+enum.nextElement( ) +"<br>");
 	}
 %>
 

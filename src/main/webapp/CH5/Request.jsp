@@ -1,38 +1,38 @@
-<%@ page language="java" contentType="text/html;charset=Big5" %>
+<%@ page language="java" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <title>CH5 - Request.jsp</title>
 </head>
 <body>
 
-<h2>javax.servlet.http.HttpServletRequest §∂≠±©“¥£®—™∫§Ë™k</h2>
+<h2>javax.servlet.http.HttpServletRequest ‰ªãÈù¢ÊâÄÊèê‰æõÁöÑÊñπÊ≥ï</h2>
 
-getParameter("Name")°G<%= request.getParameter("Name") %><br>
-getParameter("Number")°G<%= request.getParameter("Number") %><br>
-getAttribute("Name")°G<%= request.getAttribute("Name") %><br>
-getAttribute("Number")°G<%= request.getAttribute("Number") %><br><br>
+getParameter("Name")Ôºö<%= request.getParameter("Name") %><br>
+getParameter("Number")Ôºö<%= request.getParameter("Number") %><br>
+getAttribute("Name")Ôºö<%= request.getAttribute("Name") %><br>
+getAttribute("Number")Ôºö<%= request.getAttribute("Number") %><br><br>
 
-getAuthType( )°G<%= request.getAuthType() %><br>
-getProtocol( )°G<%= request.getProtocol() %><br>
-getMethod( )°G<%= request.getMethod() %><br>
-getScheme( )°G<%= request.getScheme() %><br>
-getContentType( )°G<%= request.getContentType() %><br>
-getContentLength( )°G<%= request.getContentLength() %><br>
-getCharacterEncoding( )°G<%= request.getCharacterEncoding() %><br>
-getRequestedSessionId( )°G<%= request.getRequestedSessionId() %><br><br>
+getAuthType( )Ôºö<%= request.getAuthType() %><br>
+getProtocol( )Ôºö<%= request.getProtocol() %><br>
+getMethod( )Ôºö<%= request.getMethod() %><br>
+getScheme( )Ôºö<%= request.getScheme() %><br>
+getContentType( )Ôºö<%= request.getContentType() %><br>
+getContentLength( )Ôºö<%= request.getContentLength() %><br>
+getCharacterEncoding( )Ôºö<%= request.getCharacterEncoding() %><br>
+getRequestedSessionId( )Ôºö<%= request.getRequestedSessionId() %><br><br>
 
-getContextPath( )°G<%= request.getContextPath() %><br>	
-getServletPath( )°G<%= request.getServletPath() %><br> 
-getPathInfo( )°G<%= request.getPathInfo() %><br>
-getRequestURI( )°G<%= request.getRequestURI() %><br>
-getQueryString( )°G<%= request.getQueryString() %><br><br>
+getContextPath( )Ôºö<%= request.getContextPath() %><br>
+getServletPath( )Ôºö<%= request.getServletPath() %><br>
+getPathInfo( )Ôºö<%= request.getPathInfo() %><br>
+getRequestURI( )Ôºö<%= request.getRequestURI() %><br>
+getQueryString( )Ôºö<%= request.getQueryString() %><br><br>
 
-getRemoteAddr( )°G<%= request.getRemoteAddr() %><br>
-getRemoteHost( )°G<%= request.getRemoteHost() %><br>
-getRemoteUser( )°G<%= request.getRemoteUser() %><br>
-getRemotePort( )°G<%= request.getRemotePort() %><br>
-getServerName( )°G<%= request.getServerName() %><br>
-getServerPort( )°G<%= request.getServerPort() %><br>
+getRemoteAddr( )Ôºö<%= request.getRemoteAddr() %><br>
+getRemoteHost( )Ôºö<%= request.getRemoteHost() %><br>
+getRemoteUser( )Ôºö<%= request.getRemoteUser() %><br>
+getRemotePort( )Ôºö<%= request.getRemotePort() %><br>
+getServerName( )Ôºö<%= request.getServerName() %><br>
+getServerPort( )Ôºö<%= request.getServerPort() %><br>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,13 +6,13 @@
 </head>
 <body>
 
- <h2>½d³ò¬° Requestªº JavaBean½d¨Òµ{¦¡ - Counter1</h2>
+ <h2>ç¯„åœç‚º Requestçš„ JavaBeanç¯„ä¾‹ç¨‹å¼ - Counter1</h2>
 
 <jsp:useBean id="myBean" scope="request" class="tw.com.javaworld.CH8.Counter"/>
-<p>±z¤v°ÑÆ[<font color="red">
+<p>æ‚¨å·±åƒè§€<font color="red">
 <jsp:getProperty name="myBean" property="count"/>
-</font>¦¸</p>
-<p>Åwªï¦A¦¸°ÑÆ[</p>
+</font>æ¬¡</p>
+<p>æ­¡è¿å†æ¬¡åƒè§€</p>
 
 <jsp:include page="Hello.jsp" flush="true"/>
 

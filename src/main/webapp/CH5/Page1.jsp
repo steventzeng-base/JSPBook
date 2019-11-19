@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -7,8 +7,8 @@
 <body>
 
 </br>
-<%	
-	application.setAttribute("Name","mike");  	
+<%
+	application.setAttribute("Name","mike");
 	application.setAttribute("Password","browser");
 %>
 <jsp:forward page="Page2.jsp"/>

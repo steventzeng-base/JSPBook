@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,37 +6,37 @@
 </head>
 <body>
 
-<h2>Session¥Í©R¶g´Á½d¨Ò</h2>
+<h2>Sessionç”Ÿå‘½é€±æœŸç¯„ä¾‹</h2>
 
-<%	
-	// ¦pªGsession¬O·sªº¡A³]©wsessionªºªì­È	
-	if(session.isNew())	
-	{	 
-		// ³]©wsession­Y¤Q¬í¤º¨S¦³¬¡°Ê«h¨ÏSession¹L´Á	 
-		session.setMaxInactiveInterval(10);	
-		
-		// ±N¦¹Session time outªº¬í¼Æ¥[¤J¹L´Á®É¶¡¤¤	 
-		session.setAttribute("expire","10");  	
-		out.println("³]©wSession­Y¤Q¬í¤º¨S¦³¬¡°Ê«h¨ÏSession¹L´Á");	
-	}	
-	else	
+<%
+	// å¦‚æžœsessionæ˜¯æ–°çš„ï¼Œè¨­å®šsessionçš„åˆå€¼
+	if(session.isNew())
 	{
-		String str_expire_time =(String)session.getAttribute("expire");    		
-		
-		// ¨ú±osession«Øºcªº®É¶¡  	    
-		long create_time  = session.getCreationTime();	    
-		long access_time  = session.getLastAccessedTime();	    
-		long current_time = System.currentTimeMillis();		
-		
-		long exist_time   = (current_time-create_time)/1000;		
-		out.println("session¤w¦s¦b"+exist_time+"¬í");		
-		
-		// ¦pªGsession¦s¦bªº®É¶¡¶W¹L30¬í¡A«h±Nsession²¾°£		
-		if (exist_time >= 30) 		
-		{			
-			out.println("session ®É¶¡¤w¨ì...¦Û°Ê¥¢®Ä");		    
+		// è¨­å®šsessionè‹¥åç§’å…§æ²’æœ‰æ´»å‹•å‰‡ä½¿SessionéŽæœŸ
+		session.setMaxInactiveInterval(10);
+
+		// å°‡æ­¤Session time outçš„ç§’æ•¸åŠ å…¥éŽæœŸæ™‚é–“ä¸­
+		session.setAttribute("expire","10");
+		out.println("è¨­å®šSessionè‹¥åç§’å…§æ²’æœ‰æ´»å‹•å‰‡ä½¿SessionéŽæœŸ");
+	}
+	else
+	{
+		String str_expire_time =(String)session.getAttribute("expire");
+
+		// å–å¾—sessionå»ºæ§‹çš„æ™‚é–“
+		long create_time  = session.getCreationTime();
+		long access_time  = session.getLastAccessedTime();
+		long current_time = System.currentTimeMillis();
+
+		long exist_time   = (current_time-create_time)/1000;
+		out.println("sessionå·²å­˜åœ¨"+exist_time+"ç§’");
+
+		// å¦‚æžœsessionå­˜åœ¨çš„æ™‚é–“è¶…éŽ30ç§’ï¼Œå‰‡å°‡sessionç§»é™¤
+		if (exist_time >= 30)
+		{
+			out.println("session æ™‚é–“å·²åˆ°...è‡ªå‹•å¤±æ•ˆ");
 			session.invalidate();
-		 }	
+		 }
 	}
 %>
 

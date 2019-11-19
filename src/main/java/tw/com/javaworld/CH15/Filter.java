@@ -1,62 +1,63 @@
 package tw.com.javaworld.CH15;
 
-import javax.servlet.*;
-import javax.servlet.jsp.*;
-import javax.servlet.jsp.tagext.*;
+import javax.servlet.ServletRequest;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.tagext.BodyContent;
+import javax.servlet.jsp.tagext.BodyTagSupport;
 
 public class Filter extends BodyTagSupport {
 
-	public Filter() {
-	}
-	
-	public int doAfterBody() {
+    public Filter() {
+    }
 
-		// ¨ú±o body content ª«¥ó    
-		BodyContent bc = getBodyContent();
+    public int doAfterBody() {
 
-		// ¨ú±o request ª«¥ó    
-		ServletRequest request = pageContext.getRequest();
+        // å–å¾— body content ç‰©ä»¶
+        BodyContent bc = getBodyContent();
 
-		// ­Y±o¨ì Filter °Ñ¼Æ­È¬° Filter ®É¡A±N body content ªº¤º®e¶Ç¤J¦Ü filter()    
-		// §_«h¡Aª½±µÅã¥Ü­ì©l¸ê©l¤º®e  
-		
-		String filter;  
+        // å–å¾— request ç‰©ä»¶
+        ServletRequest request = pageContext.getRequest();
 
-		if (request.getParameter("Filter") != null
-			&& request.getParameter("Filter").equals("Filter")) {
-			
-			filter = toFilter(bc.getString());
-		} else {
-			filter = bc.getString();
-		}
-		try {
-			JspWriter out = bc.getEnclosingWriter();
-			out.print(filter);
-		} catch (Exception e) {
-			System.out.println("Error in FilterTag: " + e);
-		}
-		return (SKIP_BODY);
-	}
+        // è‹¥å¾—åˆ° Filter åƒæ•¸å€¼ç‚º Filter æ™‚ï¼Œå°‡ body content çš„å…§å®¹å‚³å…¥è‡³ filter()
+        // å¦å‰‡ï¼Œç›´æ¥é¡¯ç¤ºåŸå§‹è³‡å§‹å…§å®¹
 
-	//  ¥D­n±N¦r¦êªº¤º®e¤¤¦³¥H¤U¯S®í²Å¸¹¡G< ¡B > ¡B " ¡B &  
-	//  ¤À§O¥N´À¬° &lt; ¡B &gt; ¡B &quot; ¡B &amp;   
-	public String toFilter(String input) {
-		StringBuffer filtered = new StringBuffer(input.length());
-		char c;
-		for (int i = 0; i < input.length(); i++) {
-			c = input.charAt(i);
-			if (c == '<') {
-				filtered.append("&lt;");
-			} else if (c == '>') {
-				filtered.append("&gt;");
-			} else if (c == '"') {
-				filtered.append("&quot;");
-			} else if (c == '&') {
-				filtered.append("&amp;");
-			} else {
-				filtered.append(c);
-			}
-		}
-		return (filtered.toString());
-	}
+        String filter;
+
+        if (request.getParameter("Filter") != null
+                && request.getParameter("Filter").equals("Filter")) {
+
+            filter = toFilter(bc.getString());
+        } else {
+            filter = bc.getString();
+        }
+        try {
+            JspWriter out = bc.getEnclosingWriter();
+            out.print(filter);
+        } catch (Exception e) {
+            System.out.println("Error in FilterTag: " + e);
+        }
+        return (SKIP_BODY);
+    }
+
+    //  ä¸»è¦å°‡å­—ä¸²çš„å…§å®¹ä¸­æœ‰ä»¥ä¸‹ç‰¹æ®Šç¬¦è™Ÿï¼š< ã€ > ã€ " ã€ &
+    //  åˆ†åˆ¥ä»£æ›¿ç‚º &lt; ã€ &gt; ã€ &quot; ã€ &amp;
+    public String toFilter(String input) {
+        StringBuffer filtered = new StringBuffer(input.length());
+        char c;
+        for (int i = 0; i < input.length(); i++) {
+            c = input.charAt(i);
+            if (c == '<') {
+                filtered.append("&lt;");
+            } else if (c == '>') {
+                filtered.append("&gt;");
+            } else if (c == '"') {
+                filtered.append("&quot;");
+            } else if (c == '&') {
+                filtered.append("&amp;");
+            } else {
+                filtered.append(c);
+            }
+        }
+        return (filtered.toString());
+    }
 }

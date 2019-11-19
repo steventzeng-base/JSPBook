@@ -1,52 +1,52 @@
 <%@ page import="java.io.*" %>
 <%@ page import="org.jdom.*" %>
 <%@ page import="org.jdom.output.XMLOutputter" %>
-<%@ page contentType="text/xml;charset=Big5" %>
+<%@ page contentType="text/xml;charset=UTF-8" %>
 
-<%		
-     // «Ø¥ß®Ú¤¸¯À <books> 	      
-     Element rootElement = new Element("books");      
-     Document document = new Document(rootElement);                  
-     
-     // «Ø¥ß¤l¤¸¯À<book>»P¨äÄİ©Ê¤Î¤º®e      
-     Element bookElement = new Element("book");            
-     rootElement.addContent(bookElement);      
-     
-     // «Ø¥ß¤l¤¸¯À<title>      
-     Element titleElement = new Element("title");      
-     titleElement.addContent("JAVA PRIMER");      
-     titleElement.setAttribute("ISBN", "A1195");      
-     bookElement.addContent(titleElement);      
-     
-     // «Ø¥ß¤l¤¸¯À<author>      
-     Element authorElement = new Element("author");      
-     authorElement.addContent("Dr.Lee");      
-     bookElement.addContent(authorElement);            
-     
-     // «Ø¥ß¤l¤¸¯À<book>»P¨äÄİ©Ê¤Î¤º®e      
-     Element bookElement2 = new Element("book");            
-     rootElement.addContent(bookElement2);      
-     
-     // «Ø¥ß¤l¤¸¯À<title>      
-     Element titleElement2 = new Element("title");      
-     titleElement2.addContent("JSP §Ş³N¤â¥U");      
-     titleElement2.setAttribute("ISBN", "C8254");      
-     bookElement2.addContent(titleElement2);      
-     
-     // «Ø¥ß¤l¤¸¯À<author>      
-     Element authorElement2 = new Element("author");      
-     authorElement2.addContent("¤W³Ç ªL");      
-     bookElement2.addContent(authorElement2);                  
-     
-     // ¿é¥XXML¤å¥ó      
-     XMLOutputter outputter = new XMLOutputter();      
-     
-     // ³]©w½s½X      
-     outputter.setEncoding("Big5");      
-     
-     // ³]©w­ì©lÀÉ¬O§_´«¦æ©MÁY±Æ      
-     outputter.setNewlines(true);      
-     outputter.setIndent(true);      
-     outputter.output(document, out); 
+<%
+     // å»ºç«‹æ ¹å…ƒç´  <books>
+     Element rootElement = new Element("books");
+     Document document = new Document(rootElement);
+
+     // å»ºç«‹å­å…ƒç´ <book>èˆ‡å…¶å±¬æ€§åŠå…§å®¹
+     Element bookElement = new Element("book");
+     rootElement.addContent(bookElement);
+
+     // å»ºç«‹å­å…ƒç´ <title>
+     Element titleElement = new Element("title");
+     titleElement.addContent("JAVA PRIMER");
+     titleElement.setAttribute("ISBN", "A1195");
+     bookElement.addContent(titleElement);
+
+     // å»ºç«‹å­å…ƒç´ <author>
+     Element authorElement = new Element("author");
+     authorElement.addContent("Dr.Lee");
+     bookElement.addContent(authorElement);
+
+     // å»ºç«‹å­å…ƒç´ <book>èˆ‡å…¶å±¬æ€§åŠå…§å®¹
+     Element bookElement2 = new Element("book");
+     rootElement.addContent(bookElement2);
+
+     // å»ºç«‹å­å…ƒç´ <title>
+     Element titleElement2 = new Element("title");
+     titleElement2.addContent("JSP æŠ€è¡“æ‰‹å†Š");
+     titleElement2.setAttribute("ISBN", "C8254");
+     bookElement2.addContent(titleElement2);
+
+     // å»ºç«‹å­å…ƒç´ <author>
+     Element authorElement2 = new Element("author");
+     authorElement2.addContent("ä¸Šå‚‘ æ—");
+     bookElement2.addContent(authorElement2);
+
+     // è¼¸å‡ºXMLæ–‡ä»¶
+     XMLOutputter outputter = new XMLOutputter();
+
+     // è¨­å®šç·¨ç¢¼
+     outputter.setEncoding("UTF-8");
+
+     // è¨­å®šåŸå§‹æª”æ˜¯å¦æ›è¡Œå’Œç¸®æ’
+     outputter.setNewlines(true);
+     outputter.setIndent(true);
+     outputter.output(document, out);
 %>
 

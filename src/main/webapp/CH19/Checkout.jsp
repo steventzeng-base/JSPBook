@@ -1,5 +1,5 @@
 <%@ page import="java.util.*,tw.com.javaworld.CH19.Book" %>
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -11,22 +11,22 @@
 <br>
 
 <center>
- <h2>ºô¸ô®Ñ©± - µ²±b</h2><br>
+ <h2>ç¶²è·¯æ›¸åº— - çµå¸³</h2><br>
  <table border="1" width="631">
-  <tr bgcolor="#999999"> 
-    <td width="194"><div align="center"><b>®Ñ¦W</b></div></td>
-    <td width="81"><div align="center"><b>§@ªÌ</b></div></td>
-    <td width="57"><div align="center"><b>¥Xª©ªÀ</b></div></td>
-    <td width="93"><div align="center"><b>»ù®æ</b></div></td>
-    <td width="47"><div align="center"><b>¼Æ¶q</b></div></td>
+  <tr bgcolor="#999999">
+    <td width="194"><div align="center"><b>æ›¸å</b></div></td>
+    <td width="81"><div align="center"><b>ä½œè€…</b></div></td>
+    <td width="57"><div align="center"><b>å‡ºç‰ˆç¤¾</b></div></td>
+    <td width="93"><div align="center"><b>åƒ¹æ ¼</b></div></td>
+    <td width="47"><div align="center"><b>æ•¸é‡</b></div></td>
     <td width="119"><div align="center"><b></b></div></td>
   </tr>
-  
+
   <c:set var="buylist" value="${sessionScope.shoppingcart}" />
   <c:set var="amount" value="${requestScope.amount}" />
-  
+
   <c:forEach items="${buylist}" var="order" varStatus="status" >
- 
+
  <tr>
  <td><b>${order.name}</b></td>
  <td><b>${order.author}</b></td>
@@ -34,21 +34,21 @@
  <td><b><div align="right">${order.price}</div></b></td>
  <td><b><div align="right">${order.quantity}</div></b></td>
  </tr>
- 
+
  </c:forEach>
- 
+
  <tr>
  <td></td>
  <td></td>
  <td></td>
- <td><font color="red"><b>Á`ª÷ÃB¡G</b></font></td>
+ <td><font color="red"><b>ç¸½é‡‘é¡ï¼š</b></font></td>
  <td></td>
  <td><font color="red"><b>\$${requestScope.amount}</b></font></td>
  <td> </td>
  </tr>
  </table>
  <p>
- <a href="../CH19/EShop.jsp">¬O§_Ä~ÄòÁÊª«</a>
+ <a href="../CH19/EShop.jsp">æ˜¯å¦ç¹¼çºŒè³¼ç‰©</a>
  </center>
 </body>
 </html>

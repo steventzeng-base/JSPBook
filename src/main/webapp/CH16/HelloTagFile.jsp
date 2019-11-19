@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="JSPBook" tagdir="/WEB-INF/tags/" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<h2>Tag File ½d¨Ò</h2>
+<h2>Tag File ç¯„ä¾‹</h2>
 
-<c:out value="¨Ï¥Î <JSPBook:Hello /> ¦L¥X Åwªïµü" />
+<c:out value="ä½¿ç”¨ <JSPBook:Hello /> å°å‡º æ­¡è¿Žè©ž" />
 <h1><JSPBook:Hello /></h1>
 
 </body>

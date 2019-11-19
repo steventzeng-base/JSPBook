@@ -1,5 +1,5 @@
 <%@ page import="com.jspsmart.upload.*" %>
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -7,32 +7,32 @@
 </head>
 <body>
 
-<h2>ÀÉ®×¤W¶Ç½d¨Ò - jspSmart</h2>
+<h2>æª”æ¡ˆä¸Šå‚³ç¯„ä¾‹ - jspSmart</h2>
 
 <jsp:useBean id="mySmartUpload" scope="page" class="com.jspsmart.upload.SmartUpload" />
-<%	
-	//­pºâÀÉ®×¤W¶Ç­Ó¼Æ	
-	int count=0;        	
-	
-	//SmartUpload¤§ªì©l¤Æ,¨Ï¥Î³o­Ójspsmart¤@©w­n¦b¤@¶}©l´N³o¼Ë«Å§i	
-	mySmartUpload.initialize(pageContext);    
-	
-	//«Å§i­­¨î¤W¶Ç¤§ÀÉ®×¤j¤p¬° 5 MB    
-	mySmartUpload.setMaxFileSize(5 * 1024 * 1024);	
-	
-	//¨Ì¾Úform¤§¤º®e¤W¶Ç	
-	mySmartUpload.upload();	
-	
-	try {        
-		//±NÀÉ®×¦s©ñ©óC:\Upload\		
+<%
+	//è¨ˆç®—æª”æ¡ˆä¸Šå‚³å€‹æ•¸
+	int count=0;
+
+	//SmartUploadä¹‹åˆå§‹åŒ–,ä½¿ç”¨é€™å€‹jspsmartä¸€å®šè¦åœ¨ä¸€é–‹å§‹å°±é€™æ¨£å®£å‘Š
+	mySmartUpload.initialize(pageContext);
+
+	//å®£å‘Šé™åˆ¶ä¸Šå‚³ä¹‹æª”æ¡ˆå¤§å°ç‚º 5 MB
+	mySmartUpload.setMaxFileSize(5 * 1024 * 1024);
+
+	//ä¾æ“šformä¹‹å…§å®¹ä¸Šå‚³
+	mySmartUpload.upload();
+
+	try {
+		//å°‡æª”æ¡ˆå­˜æ”¾æ–¼C:\Upload\
 		count = mySmartUpload.save("C:\\Upload\\");
-		
-		//¦L¥X¤W¶ÇÀÉ®×­Ó¼Æ 		
-		out.println("±z¦¨¥\¤W¶Ç"+count + "­ÓÀÉ®×.");
-		
+
+		//å°å‡ºä¸Šå‚³æª”æ¡ˆå€‹æ•¸
+		out.println("æ‚¨æˆåŠŸä¸Šå‚³"+count + "å€‹æª”æ¡ˆ.");
+
 	} catch (Exception e) {
 		out.println(e.toString());
-	}	
+	}
 %>
 </body>
 </html>

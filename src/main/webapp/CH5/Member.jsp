@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,19 +6,19 @@
 </head>
 <body>
 
-<h2>javax.servlet.http.HttpSession - session ª«¥ó</h2> 	
-<%	
+<h2>javax.servlet.http.HttpSession - session ç‰©ä»¶</h2>
+<%
 	String Login = (String)session.getAttribute("Login");
-	
-	if (Login != null && Login.equals("OK")) {		
-		out.println("Åwªï¶i¤J");
-		session.invalidate();	
-	}	
-	else {		
-		out.println("½Ğ¥ıµn¤JÁÂÁÂ")	;
-		out.println("<br>¸g¹L¤­¬í¤§«á¡Aºô­¶·|¦Û°Ê¤Ï¦^Login.jsp");
-		
-		response.setHeader("Refresh","5;URL=Login.jsp");	
+
+	if (Login != null && Login.equals("OK")) {
+		out.println("æ­¡è¿é€²å…¥");
+		session.invalidate();
+	}
+	else {
+		out.println("è«‹å…ˆç™»å…¥è¬è¬")	;
+		out.println("<br>ç¶“éäº”ç§’ä¹‹å¾Œï¼Œç¶²é æœƒè‡ªå‹•åå›Login.jsp");
+
+		response.setHeader("Refresh","5;URL=Login.jsp");
 	}
 %>
 

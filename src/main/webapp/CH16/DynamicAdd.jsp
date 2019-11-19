@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="/WEB-INF/tlds/MyTaglib.tld" prefix="mytag" %>
 
 <html>
@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h2>DynamicAdd ¼ÐÅÒ</h2>
+<h2>DynamicAdd æ¨™ç±¤</h2>
 
 <h1><mytag:DynAdd num1="5.37" num2="9.11" num3="55.09" /></h1>
 

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
@@ -6,14 +6,14 @@
 </head>
 <body>
 
- <h2>Introspection - ¦Û¬Ù¾÷¨î</h2>
-<fmt:requestEncoding value="Big5" />
+ <h2>Introspection - è‡ªçœæ©Ÿåˆ¶</h2>
+<fmt:requestEncoding value="UTF-8" />
 
 <jsp:useBean id="myBean" scope="page" class="tw.com.javaworld.CH8.SimpleBean"/>
 <jsp:setProperty name="myBean" property="*" />
 
-©m¦W¡G<jsp:getProperty name="myBean" property="name"/><br>
-½s¸¹¡G<jsp:getProperty name="myBean" property="number"/>
+å§“åï¼š<jsp:getProperty name="myBean" property="name"/><br>
+ç·¨è™Ÿï¼š<jsp:getProperty name="myBean" property="number"/>
 
 </body>
 </html>

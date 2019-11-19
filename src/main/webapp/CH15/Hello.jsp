@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="/WEB-INF/tlds/MyTaglib.tld" prefix="mytag" %>
 
 <html>
@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h2>Hello World ¼ÐÅÒ</h2>
+<h2>Hello World æ¨™ç±¤</h2>
 
 <h1><mytag:Hello /></h1>
 

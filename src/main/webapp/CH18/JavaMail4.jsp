@@ -3,7 +3,7 @@
 <%@ page import="javax.mail.internet.*" %>
 <%@ page import="java.util.*,java.io.*,java.text.*" %>
 
-<%@ page contentType="text/html;charset=MS950" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -11,67 +11,67 @@
 </head>
 <body>
 
-<h2>§Q¥ÎJavaMail¨Ó¶Ç°eµù¥U¸ê®Æ</h2>
+<h2>åˆ©ç”¨JavaMailä¾†å‚³é€è¨»å†Šè³‡æ–™</h2>
 <%
 	InternetAddress[] address = null;
 	ResourceBundle messages = ResourceBundle.getBundle("Mail");
-	
-	request.setCharacterEncoding("MS950");
-	
-	String mailserver   = "ecd.pchome.com.tw";	
+
+	request.setCharacterEncoding("UTF-8");
+
+	String mailserver   = "ecd.pchome.com.tw";
 	String From         = "jsptw@pchome.com.tw";
-	String Subject      = "Åwªï¥[¤J JavaWorld ½×¾Â";
+	String Subject      = "æ­¡è¿åŠ å…¥ JavaWorld è«–å£‡";
 	String name         = request.getParameter("Name");
 	String password     = request.getParameter("Password");
 	String to           = request.getParameter("To");
-	
+
 	Object[] args = { name , password};
 	MessageFormat formatter = new MessageFormat("");
 	formatter.applyPattern(messages.getString("message"));
 	String messageText  = formatter.format(args);
-	
+
   	boolean sessionDebug = false;
 
 	try {
 
-  		// ³]©w©Ò­n¥ÎªºMail ¦øªA¾¹©M©Ò¨Ï¥Îªº¶Ç°e¨ó©w
+  		// è¨­å®šæ‰€è¦ç”¨çš„Mail ä¼ºæœå™¨å’Œæ‰€ä½¿ç”¨çš„å‚³é€å”å®š
   		java.util.Properties props = System.getProperties();
- 
+
   		props.put("mail.host",mailserver);
   		props.put("mail.transport.protocol","smtp");
-  
-  		// ²£¥Í·sªºSession ªA°È
+
+  		// ç”¢ç”Ÿæ–°çš„Session æœå‹™
   		javax.mail.Session mailSession = javax.mail.Session.getDefaultInstance(props,null);
   		mailSession.setDebug(sessionDebug);
-	
+
   		Message msg = new MimeMessage(mailSession);
-  
-  		// ³]©w¶Ç°e¶l¥óªºµo«H¤H
+
+  		// è¨­å®šå‚³é€éƒµä»¶çš„ç™¼ä¿¡äºº
   		msg.setFrom(new InternetAddress(From));
-  
-  		// ³]©w¶Ç°e¶l¥ó¦Ü¦¬«H¤Hªº«H½c
+
+  		// è¨­å®šå‚³é€éƒµä»¶è‡³æ”¶ä¿¡äººçš„ä¿¡ç®±
   		address = InternetAddress.parse(to,false);
   		msg.setRecipients(Message.RecipientType.TO, address);
-  
-  		// ³]©w«H¤¤ªº¥DÃD 
+
+  		// è¨­å®šä¿¡ä¸­çš„ä¸»é¡Œ
   		msg.setSubject(Subject);
-  
-  		// ³]©w°e«Hªº®É¶¡
+
+  		// è¨­å®šé€ä¿¡çš„æ™‚é–“
   		msg.setSentDate(new Date());
 
   		Multipart mp = new MimeMultipart();
   		MimeBodyPart mbp = new MimeBodyPart();
-	      
-  		// ³]©w¶l¥ó¤º®eªº«¬ºA¬° text/html
-  		mbp.setContent(messageText,"text/html;charset=MS950");
+
+  		// è¨­å®šéƒµä»¶å…§å®¹çš„å‹æ…‹ç‚º text/html
+  		mbp.setContent(messageText,"text/html;charset=UTF-8");
   		mp.addBodyPart(mbp);
   		msg.setContent(mp);
-   
+
  		Transport.send(msg);
- 		out.println("¶l¥ó¤v¶¶§Q¶Ç°e");
-	
+ 		out.println("éƒµä»¶å·±é †åˆ©å‚³é€");
+
 	}
-   	catch (MessagingException mex) 
+   	catch (MessagingException mex)
    	{
       		mex.printStackTrace();
     	}

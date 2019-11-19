@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h2><c:out value="<c:set>©M<c:remove> ªº¥Îªk" /></h2>
+<h2><c:out value="<c:set>å’Œ<c:remove> çš„ç”¨æ³•" /></h2>
 
 <c:set scope="page" var="number">
 <c:out value="${1+1}"/>
@@ -21,7 +21,7 @@
 4
 </c:set>
 
-ªì©l³]©w
+åˆå§‹è¨­å®š
 <table border="1" width="30%">
 <tr>
   <th>pageScope.number</th>
@@ -37,7 +37,7 @@
 </tr>
 </table></br>
 
-<c:out value='<c:remove var="number" scope="page" />¤§«á'/>
+<c:out value='<c:remove var="number" scope="page" />ä¹‹å¾Œ'/>
 <c:remove var="number" scope="page" />
 <table border="1" width="30%">
 <tr>
@@ -54,7 +54,7 @@
 </tr>
 </table></br>
 
-<c:out value='<c:remove var="number" />¤§«á'/>
+<c:out value='<c:remove var="number" />ä¹‹å¾Œ'/>
 <c:remove var="number" />
 <table border="1" width="30%">
 <tr>

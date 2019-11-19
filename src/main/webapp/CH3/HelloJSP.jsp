@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h2>JSP ±N·|³QÂàÄ¶¬° Servlet</h2>
+<h2>JSP å°‡æœƒè¢«è½‰è­¯ç‚º Servlet</h2>
 
 <%!
 	int k = 0;
@@ -15,8 +15,8 @@
 <c:out value="Hi" />
 <%
 	String name = "browser";
-	
-	out.println("¤j®a¦n !!");
+
+	out.println("å¤§å®¶å¥½ !!");
 %>
 <%= name %>
 

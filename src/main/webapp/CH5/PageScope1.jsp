@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,9 +6,9 @@
 </head>
 <body>
 
-<h2>Page ½d³ò - pageContext</h2>
-<%	
-	pageContext.setAttribute("Name","mike");  	
+<h2>Page ç¯„åœ - pageContext</h2>
+<%
+	pageContext.setAttribute("Name","mike");
 	pageContext.setAttribute("Password","browser");
 %>
 <jsp:forward page="PageScope2.jsp"/>

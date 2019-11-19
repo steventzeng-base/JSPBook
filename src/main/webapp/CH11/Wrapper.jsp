@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h2>Wrapper ½d¨Ò</h2>
+<h2>Wrapper ç¯„ä¾‹</h2>
 
 ${pageContext.request.method}</br>
 ${pageContext.request.queryString}

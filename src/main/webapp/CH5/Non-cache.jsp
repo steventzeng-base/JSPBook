@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=Big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -6,14 +6,14 @@
 </head>
 <body>
 
-<h2>¸Ñ¨MÂsÄı¾¹ cache ªº°İÃD -  response</h2>
-<% 	
-	if (request.getProtocol().compareTo("HTTP/1.0") == 0) 		
-		 response.setHeader("Pragma", "no-cache"); 	
-	else if (request.getProtocol().compareTo("HTTP/1.1") == 0) 		
-		response.setHeader("Cache-Control", "no-cache"); 	
-	
-	response.setDateHeader("Expires", 0); 
+<h2>è§£æ±ºç€è¦½å™¨ cache çš„å•é¡Œ -  response</h2>
+<%
+	if (request.getProtocol().compareTo("HTTP/1.0") == 0)
+		 response.setHeader("Pragma", "no-cache");
+	else if (request.getProtocol().compareTo("HTTP/1.1") == 0)
+		response.setHeader("Cache-Control", "no-cache");
+
+	response.setDateHeader("Expires", 0);
 %>
 
 </body>

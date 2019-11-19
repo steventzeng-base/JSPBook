@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=big5" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -8,16 +8,16 @@
 </head>
 <body>
 
-  <h2>ELÁô§tª«¥ó param¡BparamValues</h2>
-  
-  <fmt:requestEncoding value="Big5" />
+  <h2>ELéš±å«ç‰©ä»¶ paramã€paramValues</h2>
 
-  ©m¦W¡G${param.username}</br>
-  ±K½X¡G${param.password}</br>
-  ©Ê§O¡G${param.sex}</br>
-  ¦~ÄÖ¡G${param.old}</br>
-  ¿³½ì¡G${paramValues.habit[0]}
+  <fmt:requestEncoding value="UTF-8" />
+
+  å§“åï¼š${param.username}</br>
+  å¯†ç¢¼ï¼š${param.password}</br>
+  æ€§åˆ¥ï¼š${param.sex}</br>
+  å¹´é½¡ï¼š${param.old}</br>
+  èˆˆè¶£ï¼š${paramValues.habit[0]}
         ${paramValues.habit[1]}
-    
+
 </body>
 </html>
