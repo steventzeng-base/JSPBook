@@ -1,18 +1,24 @@
-<%@ page import="javax.mail.*" %>
-<%@ page import="javax.activation.*" %>
-<%@ page import="javax.mail.internet.*" %>
-<%@ page import="java.util.*,java.io.*,java.text.*" %>
+<%@ page import="javax.mail.Message" %>
+<%@ page import="javax.mail.MessagingException" %>
+<%@ page import="javax.mail.Multipart,javax.mail.Transport" %>
+<%@ page import="javax.mail.internet.InternetAddress" %>
+<%@ page import="javax.mail.internet.MimeBodyPart" %>
+<%@ page import="javax.mail.internet.MimeMessage" %>
+<%@ page import="javax.mail.internet.MimeMultipart" %>
+<%@ page import="java.text.MessageFormat" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.util.ResourceBundle" %>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
-  <title>CH18 - JavaMail4.jsp</title>
+    <title>CH18 - JavaMail4.jsp</title>
 </head>
 <body>
 
 <h2>利用JavaMail來傳送註冊資料</h2>
-<%
+    <%
 	InternetAddress[] address = null;
 	ResourceBundle messages = ResourceBundle.getBundle("Mail");
 
