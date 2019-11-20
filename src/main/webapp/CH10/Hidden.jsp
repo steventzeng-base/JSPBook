@@ -3,7 +3,7 @@
 
 <html>
 <head>
-  <title>CH10 - Hidden.jsp</title>
+    <title>CH10 - Hidden.jsp</title>
 </head>
 <body>
 
@@ -12,10 +12,10 @@
 name：<font color="red">${param.name}</font><br>
 number：<font color="red">${param.number}</font>
 
-<br><a href="/JSPBook/CH7/HelloJSTL.jsp" >Click here</a>
+<br><a href="/JSPBook/CH7/HelloJSTL.jsp">Click here</a>
 
 <c:url value="/CH7/HelloJSTL.jsp" var="myUrl">
-  <c:param name="name" value="111" />
+    <c:param name="name" value="111"/>
 </c:url>
 
 <br><a href='<c:out value="${myUrl}" />'>Click here</a>

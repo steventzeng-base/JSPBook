@@ -3,17 +3,17 @@
 
 <html>
 <head>
-  <title>CH7 - Core_catch.jsp</title>
+    <title>CH7 - Core_catch.jsp</title>
 </head>
 <body>
 
-<h2><c:out value="<c:catch> 的用法" /></h2>
+<h2><c:out value="<c:catch> 的用法"/></h2>
 
 <c:catch var="error_Message">
-<%
-	String eFormat = "not number";
-	int i = Integer.parseInt(eFormat);
-%>
+    <%
+        String eFormat = "not number";
+        int i = Integer.parseInt(eFormat);
+    %>
 </c:catch>
 ${error_Message}
 </body>

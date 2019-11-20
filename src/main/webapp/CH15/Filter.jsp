@@ -3,7 +3,7 @@
 
 <html>
 <head>
-  <title>CH15 - Filter.jsp</title>
+    <title>CH15 - Filter.jsp</title>
 </head>
 <body>
 
@@ -14,14 +14,15 @@
 
 <mytag:filter>
 
-<strong>範例程式三</strong><br>
-<em>範例程式三</em><br>
-<sub>範例程式三</sub><br>
+    <strong>範例程式三</strong><br>
+    <em>範例程式三</em><br>
+    <sub>範例程式三</sub><br>
 
-<pre>範例程式三</pre><br>
-<font color=red>
-  <h3>範例程式三</h3>
-</font>
+    <pre>範例程式三</pre>
+    <br>
+    <font color=red>
+        <h3>範例程式三</h3>
+    </font>
 
 </mytag:filter>
 

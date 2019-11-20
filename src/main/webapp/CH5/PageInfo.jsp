@@ -2,12 +2,12 @@
 
 <html>
 <head>
-  <title>CH5 - PageInfo.jsp</title>
+    <title>CH5 - PageInfo.jsp</title>
 </head>
 <body>
 
 <h2>page 隱含物件</h2>
-Page Info = <%= ((javax.servlet.jsp.HttpJspPage)page).getServletInfo() %>
+Page Info = <%= ((javax.servlet.jsp.HttpJspPage) page).getServletInfo() %>
 
 </body>
 </html>

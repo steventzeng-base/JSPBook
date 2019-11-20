@@ -1,6 +1,5 @@
-<%@ page import="java.io.*" %>
-<%@ page import="java.util.*" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
+<%@ page import="java.util.Enumeration" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
@@ -8,43 +7,41 @@
     <title>CH9 - File.jsp</title>
 </head>
 <%
-	// 宣告將上傳之檔案放置到伺服器的C:\Upload目錄中
-	// 宣告限制上傳之檔案大小為 5 MB
-	String saveDirectory = "C:\\Upload\\";
-	int    maxPostSize = 5 * 1024 * 1024 ;
+    // 宣告將上傳之檔案放置到伺服器的C:\Upload目錄中
+    // 宣告限制上傳之檔案大小為 5 MB
+    String saveDirectory = "C:\\Upload\\";
+    int maxPostSize = 5 * 1024 * 1024;
 
-	// 宣告上傳檔案名稱
-	String FileName = null;
+    // 宣告上傳檔案名稱
+    String FileName = null;
 
-	// 宣告上傳檔案型態
-	String ContentType = null;
+    // 宣告上傳檔案型態
+    String ContentType = null;
 
-	// 宣告敘述上傳檔案內容敘述
-	String Description = null;
+    // 宣告敘述上傳檔案內容敘述
+    String Description = null;
 
-	//  計算上傳檔案之個數
-	int count = 0 ;
+    //  計算上傳檔案之個數
+    int count = 0;
 
-	// 產一個新的MultipartRequest 的物件，multi
-	MultipartRequest multi = new MultipartRequest(request , saveDirectory , maxPostSize );
+    // 產一個新的MultipartRequest 的物件，multi
+    MultipartRequest multi = new MultipartRequest(request, saveDirectory, maxPostSize);
 %>
 <body>
 <%
-	//  取得所有上傳之檔案輸入型態名稱及敘述
-	Enumeration filesname = multi.getFileNames();
-	Enumeration filesdc = multi.getParameterNames();
+    //  取得所有上傳之檔案輸入型態名稱及敘述
+    Enumeration filesname = multi.getFileNames();
+    Enumeration filesdc = multi.getParameterNames();
 
-	while (filesname.hasMoreElements())
-	{
-		String name = (String)filesname.nextElement();
-		String dc = (String)filesdc.nextElement();
-		FileName = multi.getFilesystemName(name);
-		ContentType = multi.getContentType(name);
-		Description = multi.getParameter(dc);
+    while (filesname.hasMoreElements()) {
+        String name = (String) filesname.nextElement();
+        String dc = (String) filesdc.nextElement();
+        FileName = multi.getFilesystemName(name);
+        ContentType = multi.getContentType(name);
+        Description = multi.getParameter(dc);
 
-		if (FileName != null)
-		{
-			count ++;
+        if (FileName != null) {
+            count++;
 
 %>
 <font color="red">你上傳的第<%= count %>個的檔案：</font><br>
@@ -53,9 +50,10 @@
 檔案的敘述：<%= Description %><br><br>
 
 <%
-		 } // end if
-	} // end while
+        } // end if
+    } // end while
 %>
-您總共上傳<font color="red"><%= count %></font>個檔案
+您總共上傳<font color="red"><%= count %>
+</font>個檔案
 </body>
 </html>

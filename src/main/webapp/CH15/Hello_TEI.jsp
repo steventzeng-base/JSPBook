@@ -3,11 +3,11 @@
 
 <html>
 <head>
-  <title>CH15 - Hello_TEI.jsp</title>
+    <title>CH15 - Hello_TEI.jsp</title>
 </head>
 <body>
 
-<h1><mytag:Hello_TEI /></h1>
+<h1><mytag:Hello_TEI/></h1>
 ${ Message }
 
 </body>

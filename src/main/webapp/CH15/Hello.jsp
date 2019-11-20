@@ -3,13 +3,13 @@
 
 <html>
 <head>
-  <title>CH15 - Hello.jsp</title>
+    <title>CH15 - Hello.jsp</title>
 </head>
 <body>
 
 <h2>Hello World 標籤</h2>
 
-<h1><mytag:Hello /></h1>
+<h1><mytag:Hello/></h1>
 
 </body>
 </html>
