@@ -3,7 +3,7 @@
 
 <html>
 <head>
-  <title>CH6 - pageContext.jsp</title>
+    <title>CH6 - pageContext.jsp</title>
 </head>
 <body>
 

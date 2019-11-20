@@ -1,143 +1,138 @@
 <html>
 
-  <body>
+<body>
 
-    <center>
+<center>
 
 
+    <!-- Begin login form -->
 
-      <!-- Begin login form -->
-
-      <form method="POST" action="j_security_check" name="loginForm">
+    <form action="j_security_check" method="POST" name="loginForm">
 
         <table border="0" cellspacing="5">
 
-          <tr>
+            <tr>
 
-            <td height="50">
+                <td height="50">
 
-              Please log in.
+                    Please log in.
 
-            </td>
+                </td>
 
-          </tr>
-
-
-
-          <!-- username password prompts fields layout -->
-
-          <tr>
-
-            <td>
-
-              <table width="100%" border="0" 
-
-                     cellspacing="2" cellpadding="5">
-
-                <tr>
-
-                  <th align="right">
-
-                    Username
-
-                  </th>
-
-                  <td align="left">
-
-                    <input type="text" name="j_username" size="16"
-
-                           maxlength="16"/>
-
-                  </td>
-
-                </tr>
-
-                <p>
-
-                <tr>
-
-                  <th align="right">
-
-                    Password
-
-                  </th>
-
-                  <td align="left">
-
-                    <input type="password" name="j_password" size="16"
-
-                           maxlength="16"/>
-
-                  </td>
-
-                </tr>
+            </tr>
 
 
+            <!-- username password prompts fields layout -->
 
-                <tr>
+            <tr>
 
-                  <td width="50%" valign="top"><div align="right" /></td>
+                <td>
 
-                  <td width="55%" valign="top">&nbsp;</td>
+                    <table border="0" cellpadding="5"
 
-                </tr>
+                           cellspacing="2" width="100%">
+
+                        <tr>
+
+                            <th align="right">
+
+                                Username
+
+                            </th>
+
+                            <td align="left">
+
+                                <input maxlength="16" name="j_username" size="16"
+
+                                       type="text"/>
+
+                            </td>
+
+                        </tr>
+
+                        <p>
+
+                            <tr>
+
+                                <th align="right">
+
+                                    Password
+
+                                </th>
+
+                                <td align="left">
+
+                                    <input maxlength="16" name="j_password" size="16"
+
+                                           type="password"/>
+
+                                </td>
+
+                            </tr>
 
 
+                            <tr>
 
-                <!-- login reset buttons layout -->
+                                <td valign="top" width="50%">
+                                    <div align="right"/>
+                                </td>
 
-                <tr>
+                                <td valign="top" width="55%">&nbsp;</td>
 
-                  <td width="50%" valign="top">
+                            </tr>
 
-                    <div align="right">
 
-                      <input type="submit" value='Login'>&nbsp;&nbsp;
+                            <!-- login reset buttons layout -->
 
-                    </div>
+                            <tr>
 
-                  </td>
+                                <td valign="top" width="50%">
 
-                  <td width="55%" valign="top">
+                                    <div align="right">
 
-                    &nbsp;&nbsp;<input type="reset" value='Reset'>
+                                        <input type="submit" value='Login'>&nbsp;&nbsp;
 
-                  </td>
+                                    </div>
 
-                </tr>
+                                </td>
 
-              </table>
+                                <td valign="top" width="55%">
 
-            </td>
+                                    &nbsp;&nbsp;<input type="reset" value='Reset'>
 
-          </tr>
+                                </td>
+
+                            </tr>
+
+                    </table>
+
+                </td>
+
+            </tr>
 
         </table>
 
-      </form>
+    </form>
 
 
+    <!-- End login form -->
 
-      <!-- End login form -->
-
-    </center>
-
+</center>
 
 
-    <script language="JavaScript" type="text/javascript">
+<script language="JavaScript" type="text/javascript">
 
-      <!--
+    <!--
 
-      // Focus the username field when the page loads in the browser.
+    // Focus the username field when the page loads in the browser.
 
-      document.forms["loginForm"].elements["j_username"].focus(  )
+    document.forms["loginForm"].elements["j_username"].focus()
 
-      // -->
+    // -->
 
-    </script>
+</script>
 
 
-
-  </body>
+</body>
 
 </html>

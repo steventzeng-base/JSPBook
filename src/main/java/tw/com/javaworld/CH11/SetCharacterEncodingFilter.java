@@ -67,7 +67,6 @@ package tw.com.javaworld.CH11;
 
 import javax.servlet.*;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
 
 /**
@@ -144,7 +143,7 @@ public class SetCharacterEncodingFilter implements Filter {
      * interpret request parameters for this request.
      *
      * @param request The servlet request we are processing
-     * @param result  The servlet response we are creating
+     * @param response  The servlet response we are creating
      * @param chain   The filter chain we are processing
      * @throws IOException      if an input/output error occurs
      * @throws ServletException if a servlet error occurs
@@ -174,10 +173,7 @@ public class SetCharacterEncodingFilter implements Filter {
             this.ignore = true;
         else if (value.equalsIgnoreCase("true"))
             this.ignore = true;
-        else if (value.equalsIgnoreCase("yes"))
-            this.ignore = true;
-        else
-            this.ignore = false;
+        else this.ignore = value.equalsIgnoreCase("yes");
 
     }
 

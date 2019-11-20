@@ -3,13 +3,13 @@
 
 <html>
 <head>
-  <title>CH16 - RepeatSimpleTag.jsp</title>
+    <title>CH16 - RepeatSimpleTag.jsp</title>
 </head>
 <body>
 
 <h2>RepeateSimpleTag 標籤</h2>
 
-<mytag:Repeat count="5" >
+<mytag:Repeat count="5">
   <jsp:attribute name="fragment">
   重覆執行 ....<br>
   </jsp:attribute>

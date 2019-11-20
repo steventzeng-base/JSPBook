@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>CH4 - Include_Html.jsp</title>
+    <title>CH4 - Include_Html.jsp</title>
 </head>
 <body>
 
@@ -10,7 +10,7 @@
 
 <%@ include file="Hello.html" %>
 <%
-	out.println("歡迎大家進入JSP的世界");
+    out.println("歡迎大家進入JSP的世界");
 %>
 
 </body>

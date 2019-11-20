@@ -3,13 +3,13 @@
 
 <html>
 <head>
-  <title>CH16 - AddSimpleTag.jsp</title>
+    <title>CH16 - AddSimpleTag.jsp</title>
 </head>
 <body>
 
 <h2>AddSimpleTag 標籤</h2>
 
-<h1><mytag:Add num1="5" num2="9" /></h1>
+<h1><mytag:Add num1="5" num2="9"/></h1>
 
 最後結果：${sum}
 

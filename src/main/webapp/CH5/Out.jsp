@@ -2,15 +2,15 @@
 
 <html>
 <head>
-  <title>CH5 - Out.jsp</title>
+    <title>CH5 - Out.jsp</title>
 </head>
 <body>
 
 <h2>javax.servlet.jsp.JspWriter - out 物件</h2>
 <%
-	int BufferSize = out.getBufferSize();
-	int Available = out.getRemaining();
-	int Used = BufferSize - Available;
+    int BufferSize = out.getBufferSize();
+    int Available = out.getRemaining();
+    int Used = BufferSize - Available;
 %>
 BufferSize : <%= BufferSize %><br>
 Available : <%= Available %><br>

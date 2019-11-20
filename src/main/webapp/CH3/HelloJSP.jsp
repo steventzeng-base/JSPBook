@@ -3,20 +3,20 @@
 
 <html>
 <head>
-  <title>CH3 - HelloJSP.jsp</title>
+    <title>CH3 - HelloJSP.jsp</title>
 </head>
 <body>
 
 <h2>JSP 將會被轉譯為 Servlet</h2>
 
 <%!
-	int k = 0;
+    int k = 0;
 %>
-<c:out value="Hi" />
+<c:out value="Hi"/>
 <%
-	String name = "browser";
+    String name = "browser";
 
-	out.println("大家好 !!");
+    out.println("大家好 !!");
 %>
 <%= name %>
 

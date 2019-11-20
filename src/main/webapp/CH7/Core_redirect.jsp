@@ -3,17 +3,17 @@
 
 <html>
 <head>
-  <title>CH7 - Core_redirect.jsp</title>
+    <title>CH7 - Core_redirect.jsp</title>
 </head>
 <body>
 
-<h2><c:out value="<c:redirect> 的用法" /></h2>
+<h2><c:out value="<c:redirect> 的用法"/></h2>
 
 <c:redirect url="http://java.sun.com">
-<c:param name="param" value="value"/>
+    <c:param name="param" value="value"/>
 </c:redirect>
 
-<c:out value="不會執行喔!!!" />
+<c:out value="不會執行喔!!!"/>
 
 </body>
 </html>

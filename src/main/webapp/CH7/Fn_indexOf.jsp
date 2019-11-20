@@ -4,7 +4,7 @@
 
 <html>
 <head>
-  <title>CH7 - Fn_indexOf.jsp</title>
+    <title>CH7 - Fn_indexOf.jsp</title>
 </head>
 <body>
 
@@ -13,41 +13,41 @@
 <c:set var="s1" value="There is a castle on a cloud"/>
 
 <table cellpadding="5" border="1">
-  <tr>
-    <th align="left">Input String</th>
-    <th>Substring</th>
-    <th>Result</th>
-  </tr>
-  <tr>
-    <td>${s1}</td>
-    <td>castle</td>
-    <td>${fn:indexOf(s1, "castle")}</td>
-  </tr>
-  <tr>
-    <td>${s1}</td>
-    <td>cloud</td>
-    <td>${fn:indexOf(s1, "cloud")}</td>
-  </tr>
-  <tr>
-    <td>${s1}</td>
-    <td>null</td>
-    <td>${fn:indexOf(s1, undefined)}</td>
-  </tr>
-  <tr>
-    <td>${s1}</td>
-    <td>empty string</td>
-    <td>${fn:indexOf(s1, "")}</td>
-  </tr>
-  <tr>
-    <td>null</td>
-    <td>castle</td>
-    <td>${fn:indexOf(undefined, "castle")}</td>
-  </tr>
-  <tr>
-    <td>null</td>
-    <td>empty string</td>
-    <td>${fn:indexOf(undefined, "")}</td>
-  </tr>
+    <tr>
+        <th align="left">Input String</th>
+        <th>Substring</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>${s1}</td>
+        <td>castle</td>
+        <td>${fn:indexOf(s1, "castle")}</td>
+    </tr>
+    <tr>
+        <td>${s1}</td>
+        <td>cloud</td>
+        <td>${fn:indexOf(s1, "cloud")}</td>
+    </tr>
+    <tr>
+        <td>${s1}</td>
+        <td>null</td>
+        <td>${fn:indexOf(s1, undefined)}</td>
+    </tr>
+    <tr>
+        <td>${s1}</td>
+        <td>empty string</td>
+        <td>${fn:indexOf(s1, "")}</td>
+    </tr>
+    <tr>
+        <td>null</td>
+        <td>castle</td>
+        <td>${fn:indexOf(undefined, "castle")}</td>
+    </tr>
+    <tr>
+        <td>null</td>
+        <td>empty string</td>
+        <td>${fn:indexOf(undefined, "")}</td>
+    </tr>
 </table>
 
 </body>
